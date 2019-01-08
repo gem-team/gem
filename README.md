@@ -64,11 +64,12 @@
 - 执行db/gem.sql文件，初始化表数据
 - 在gemframe目录下，执行mvn clean install
 - Eclipse、IDEA打开项目
-  * 运行gem-server-eureka中的EurekaServerApplication.java
-  * 运行gem-server-zull中的ZullServerApplication.java
-- Eureka注册中心地址：http://localhost:9999/
+  * 1.运行gem-server-eureka中的EurekaServerApplication.java
+  * 2.运行gem-server-zull中的ZullServerApplication.java
+  * 3.运行gem-item-xxx中的XxxServerApplication.java，即可启动项目相关业务服务
+- Eureka注册中心地址：http://localhost:9999 可看到相关服务状态
 
-- Eclipse、IDEA运行gem-item-xxx中的XxxServerApplication.java，即可启动项目相关业务服务
+
 - WebStrom运行gem-admin-layui前端代码运行start下的index.html
 - gem-admin访问地址：http://localhost:xxxx/gem-admin/index.html
 - 账号密码：admin/123456
