@@ -31,7 +31,7 @@
 - 日志收集与链路监控：Spring Cloud Sleuth
 - 分布式统一配置中心：Spring Cloud Config
 - 异构平台整合（ 挎斗模式）：Spring Cloud Sidecar
-
+**整体架构图**
 ![mahua](https://static.oschina.net/uploads/space/2019/0106/205334_lpgP_3967264.png)
 
 **技术选型**
