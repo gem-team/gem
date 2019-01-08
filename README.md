@@ -34,7 +34,7 @@ GemFrame
 - 异构平台整合（ 挎斗模式）：Spring Cloud Sidecar
 <br>  
 
-**整体架构图**
+**整体架构图**<br>
 ![mahua](https://static.oschina.net/uploads/space/2019/0106/205334_lpgP_3967264.png)
 <br>  
 
