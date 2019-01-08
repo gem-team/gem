@@ -48,6 +48,19 @@
 - Druid 1.1
 - SLF4J Log4j
 
+**服务治理**
+
+- 网关路由代理调用：Spring Cloud Netflix Zuul
+- 服务治理注册与发现：Spring Cloud Netflix Eureka
+- 服务容错保护限流降级：Spring Cloud Netflix Hystrix
+- 服务负载均衡器：Spring Cloud Netflix Ribbon
+- 声明式服务调用：Spring Cloud OpenFeign
+- 日志收集与链路监控：Spring Cloud Sleuth
+- 分布式统一配置中心：Spring Cloud Config
+- 异构平台整合（ 挎斗模式）：Spring Cloud Sidecar
+
+![mahua](https://static.oschina.net/uploads/space/2019/0106/205334_lpgP_3967264.png)
+
 **本地部署**
 >环境说明：
 >- JDK1.8
