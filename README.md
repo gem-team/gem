@@ -33,6 +33,8 @@ GemFrame
 - gem-utils-jpa 生成数据库表
 - gem-utils-build 代码构建工具
 
+<br/>
+
 **项目特点**
 - 基于最新的SpringCloud、Spring Boot2.0生态技术，高度整合封装稳定、高效、安全的微服务解决方案
 - 采用主流的VUE、Layui等前端模版框架，上手简单、美观大气、交互体验更完美
