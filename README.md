@@ -10,7 +10,6 @@
 
 - GemFrame是为企业提供微服务基础架构最全面的解决方案，也是您学习Java微服务平台的最佳学习案例。
 
-
 **项目特点**
 
 - 基于最新的SpringCloud、Spring Boot2.0生态技术，高度整合封装稳定、高效、安全的微服务解决方案
@@ -64,16 +63,16 @@
 - 运行gem-utlis-jpa即可生成数据库表结构
 - 执行db/gem.sql文件，初始化表数据
 - 在gemframe目录下，执行mvn clean install
-- Eclipse、IDEA运行
-  1.gem-server-eureka中的EurekaServerApplication.java
-  2.运行gem-server-eureka中的EurekaServerApplication.java
-* Eureka注册中心：http://localhost:9999/
+- Eclipse、IDEA打开项目
+  * 运行gem-server-eureka中的EurekaServerApplication.java
+  * 运行gem-server-zull中的ZullServerApplication.java
+- Eureka注册中心地址：http://localhost:9999/
 
-* Eclipse、IDEA运行gem-item-xxx中的XxxServerApplication.java，即可启动项目相关业务服务
-* WebStrom运行gem-admin-layui前端代码运行start下的index.html
-* gem-admin访问路径：http://localhost:8080/gem-admin/index.html
-* 账号密码：admin/123456
-* swagger文档路径：http://localhost:8080/xxx服务名/swagger/index.html
+- Eclipse、IDEA运行gem-item-xxx中的XxxServerApplication.java，即可启动项目相关业务服务
+- WebStrom运行gem-admin-layui前端代码运行start下的index.html
+- gem-admin访问地址：http://localhost:xxxx/gem-admin/index.html
+- 账号密码：admin/123456
+- swagger地址：http://localhost:[业务端口]/swagger-ui.html
 
 
 **内置功能**
