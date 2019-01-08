@@ -12,6 +12,27 @@ GemFrame
 - GemFrame是为企业提供微服务基础架构最全面的解决方案，也是您学习Java微服务平台的最佳学习案例。
 <br>  
 
+**项目模块介绍**
+> 业务模块
+- gem-item-sso 单点登录
+- gem-item-user 用户业务
+- gem-item-authorize 授权业务
+- gem-item-common 通用业务
+- gem-item-model 对象模型po,vo
+- gem-item-xxxx 自定义业务
+> 服务模块
+- gem-server-admin
+- gem-server-config
+- gem-server-eureka
+- gem-server-logs
+- gem-server-sleuth
+- gem-server-socket
+- gem-server-task
+- gem-server-zuul
+> 工具模块
+- gem-utils-jpa 生成数据库表
+- gem-utils-build 代码构建工具
+
 **项目特点**
 - 基于最新的SpringCloud、Spring Boot2.0生态技术，高度整合封装稳定、高效、安全的微服务解决方案
 - 采用主流的VUE、Layui等前端模版框架，上手简单、美观大气、交互体验更完美
