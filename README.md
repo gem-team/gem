@@ -21,6 +21,19 @@
 - 完善的安全体系，身份认证、密码策略、安全审计、日志收集 
 - 代码风格优雅简洁、通俗易懂，符合《阿里巴巴JAVA开发手册》规范要求，可作为企业代码规范
 
+**服务治理**
+
+- 网关路由代理调用：Spring Cloud Netflix Zuul
+- 服务治理注册与发现：Spring Cloud Netflix Eureka
+- 服务容错保护限流降级：Spring Cloud Netflix Hystrix
+- 服务负载均衡器：Spring Cloud Netflix Ribbon
+- 声明式服务调用：Spring Cloud OpenFeign
+- 日志收集与链路监控：Spring Cloud Sleuth
+- 分布式统一配置中心：Spring Cloud Config
+- 异构平台整合（ 挎斗模式）：Spring Cloud Sidecar
+
+![mahua](https://static.oschina.net/uploads/space/2019/0106/205334_lpgP_3967264.png)
+
 **技术选型**
 
 >前端
@@ -46,20 +59,6 @@
 - FastFs 1.2.31
 - Shiro 1.4.0
 - Druid 1.1
-- SLF4J Log4j
-
-**服务治理**
-
-- 网关路由代理调用：Spring Cloud Netflix Zuul
-- 服务治理注册与发现：Spring Cloud Netflix Eureka
-- 服务容错保护限流降级：Spring Cloud Netflix Hystrix
-- 服务负载均衡器：Spring Cloud Netflix Ribbon
-- 声明式服务调用：Spring Cloud OpenFeign
-- 日志收集与链路监控：Spring Cloud Sleuth
-- 分布式统一配置中心：Spring Cloud Config
-- 异构平台整合（ 挎斗模式）：Spring Cloud Sidecar
-
-![mahua](https://static.oschina.net/uploads/space/2019/0106/205334_lpgP_3967264.png)
 
 **本地部署**
 >环境说明：
@@ -83,26 +82,25 @@
 - WebStrom运行gem-admin-layui前端代码运行start下的index.html
 - gem-admin访问地址：http://localhost:xxxx/gem-admin/index.html
 - 账号密码：admin/123456
-- swagger地址：http://localhost:[业务端口]/swagger-ui.html
+- swagger接口测试：http://localhost:[业务端口]/swagger-ui.html
 
 
 **内置功能**
 
 - 资源管理：系统中的菜单，按钮，列表字段，查询条件等元素统称为资源。
-
 - 角色管理：角色进行精细化资源授权，实现菜单，按钮，列表以及数据控制。
-
 - 账户管理：登录系统的帐号称作“账户”，账户可以选择一个或多个角色。
-
 - 人员管理：公司人员，通常指使用账户登录系统的人，人员可以与账户绑定。
-
 - 部门管理：部门也可以称为“组织”，是将人员进行组织划分的模块。
-
 - 字典管理：系统字典管理，常量管理。
-
 - 日志管理：系统业务操作日志，API调用日志，用户登录日志等。
-
 - 监控管理：系统链路监控，服务TPS，QPS监控，SQL监控等。
-
 - 代码生成：使用GemFrame的专属代码生成器，减少80%重复工作量。
 
+**功能特点**
+
+- 强大的角色能力，菜单级，按钮级，表单级，数据级进行精细化权限控制
+- 丰富的报表形式，通过快速配置，实现曲线图，柱状图，饼状图等数据报表
+- 支持多种文件格式处理能力，实现上传，下载，播放加载，导入导出等功能
+- 灵活的日志管理，含登录日志、操作日志、异常日志，主便审计及BUG定位
+- 采用开源Activiti流程引擎，在线流程设计能力,实现网页在线设计流程，流程表单无缝对接
