@@ -29,8 +29,7 @@
 
 **技术选型**
 
-**前端**
-
+>前端
 - Vue2.x
 - Layui 单页版
 - Bootstrap v3.3.6
@@ -40,7 +39,7 @@
 - zTree core v3.5.28
 - WebUploader 0.1.5
 
-**后端**
+>后端
 - SpringCloud Edgware.SR4
 - SpringBoot 1.5.3.RELEASE
 - MyBatis-Plus 2.0.8
