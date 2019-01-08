@@ -9,6 +9,12 @@
 
 - GemFrame是为企业提供微服务基础架构最全面的解决方案，也是您学习Java微服务平台的最佳学习案例。
 
+**软件需求**
+
+- JDK1.8
+- MySQL5.5+
+- Maven3.0+
+
 
 **技术选型**
 
@@ -37,6 +43,20 @@
 - Druid 1.1
 - SLF4J Log4j
 
+**本地部署**
+
+- 通过git下载源码
+- 创建数据库gem_admin，数据库编码为UTF-8
+- 运行gem-utlis-jpa即可生成数据库表结构
+- 执行db/gem.sql文件，初始化表数据
+- 修改application.properties文件，更新MySQL账号和密码
+- 在gemframe目录下，执行mvn clean install
+
+- Eclipse、IDEA运行gem-item-xxx中的XxxServerApplication.java，则可启动项目相关业务服务
+- WebStrom运行gem-admin-layui前端代码运行start下的index.html
+- gem-admin访问路径：http://localhost:8080/gem-admin/index.html
+- 账号密码：admin/123456
+- swagger文档路径：http://localhost:8080/xxx服务名/swagger/index.html
 
 **内置功能**
 
