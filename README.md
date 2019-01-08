@@ -111,7 +111,7 @@
 
 
 
-**如何交流、反馈、参与贡献？
+**如何交流、反馈、参与贡献？**
 
 - 开发文档：http://doc.gemframe.cn
 - 官方社区：https://www.gemframe.cn/bbs
