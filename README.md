@@ -59,7 +59,7 @@ GemFrame
 
 **整体架构图**
 
-![mahua](https://static.oschina.net/uploads/space/2019/0106/205334_lpgP_3967264.png)
+![mahua](https://static.oschina.net/uploads/space/2019/0109/130330_w4uk_3967264.png)
 <br>  
 
 **技术选型**
