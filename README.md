@@ -122,7 +122,7 @@ GemFrame
 - 在gemframe目录下，执行mvn clean install
 - Eclipse、IDEA打开项目
   * 1.运行gem-server-eureka中的EurekaServerApplication.java
-  * 2.运行gem-server-zull中的ZullServerApplication.java
+  * 2.运行gem-server-zuul中的ZullServerApplication.java
   * 3.运行gem-item-xxx中的XxxServerApplication.java，即可启动项目相关业务服务
 - Eureka注册中心地址：http://localhost:9999 可看到相关服务状态
 
