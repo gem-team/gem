@@ -137,8 +137,8 @@ GemFrame
 
 - 开发文档：http://doc.gemframe.cn
 - 官方社区：https://www.gemframe.cn/bbs
-- gitee仓库：https://gitee.com/gem-team/gemframe
-- github仓库：https://gitee.com/gemteam/gemframe
+- gitee仓库：https://gitee.com/gemteam/gemframe
+- github仓库：https://gitee.com/gem-team/gemframe
 - 官方网站：https://www.gemframe.cn
 - 官方QQ群：72940788、446017307
 > 如需关注项目最新动态，请Watch、Star项目，同时也是对项目最好的支持
