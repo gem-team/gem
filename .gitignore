@@ -1,3 +1,19 @@
+# IDE filter
+*.idea
+*.iml
+.classpath
+.project
+.settings
+.gitignore
+.apt_generated_tests
+.apt_generated
+.factorypath
+.springBeans
+logs
+bin
+target
+
+
 # Compiled class file
 *.class
 
