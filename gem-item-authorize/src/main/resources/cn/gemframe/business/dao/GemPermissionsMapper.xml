@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gemframe.business.dao.GemPermissionsMapper">
+	<select id="findPermissByRole" parameterType="map" resultType="long">
+	    SELECT 
+	        dtp.id
+	    from 
+	        gem_tab_permissions dtp,gem_tab_role_permis dtrp
+	    WHERE 
+	        dtrp.per_id=dtp.id AND dtrp.role_id=#{id}
+	</select>
+
+	<select id="findPermissMunByRole" parameterType="map" resultType="long">
+	    SELECT
+	        dtp.id
+	    from
+	        gem_tab_permissions dtp,gem_tab_role_permis dtrp
+	    WHERE
+	        dtp.per_menus_type = 1 AND dtrp.per_id=dtp.id AND dtrp.role_id=#{id}
+	</select>
+	
+    <select id="findPermissByUser" parameterType="map" resultType="long">
+        SELECT 
+            dtp.id
+        from 
+            gem_tab_permissions dtp,gem_tab_role_permis dtrp,gem_tab_user_role dtur
+        WHERE 
+            dtrp.per_id=dtp.id AND dtrp.role_id=dtur.id AND dtur.user_id=#{id}
+	</select>
+
+</mapper>

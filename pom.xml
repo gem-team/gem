@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>gem</artifactId>
+	<packaging>pom</packaging>
+	<parent>
+		<groupId>cn.gemframe</groupId>
+		<artifactId>gemframe</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<properties>
+		<!-- 公用版本 -->
+		<java-jdk-version>1.8</java-jdk-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<spring-boot-maven-plugin-version>2.0.1.RELEASE</spring-boot-maven-plugin-version>
+		<!-- logs -->
+		<elasticsearch-version>6.1.2</elasticsearch-version>
+		<logstash-logback-version>4.11</logstash-logback-version>
+		<!-- ant -->
+		<apache-ant-version>1.9.7</apache-ant-version>
+		<!-- mapper -->
+		<boot-mapper-version>1.1.0</boot-mapper-version>
+		<alibaba-druid-version>1.1.8</alibaba-druid-version>
+		<!-- swagger -->
+		<springfox-swagger-version>2.6.1</springfox-swagger-version>
+		<!-- admin -->
+		<admin-version>1.5.7</admin-version>
+	</properties>
+	<repositories>
+		<repository>
+			<id>maven-central</id>
+			<name>maven-central</name>
+			<url>http://nexus.webcloud.iego.cn:8081/repository/maven-central/</url>
+		</repository>
+		<repository>
+			<id>maven-public</id>
+			<name>maven-public</name>
+			<url>http://nexus.webcloud.iego.cn:8081/repository/maven-public/</url>
+		</repository>
+	</repositories>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java-jdk-version}</source>
+					<target>${java-jdk-version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<modules>
+		<module>gem-utils-jpa</module>
+		<module>gem-item-authorize</module>
+		<module>gem-item-domain</module>
+		<module>gem-item-sso</module>
+		<module>gem-item-common</module>
+		<module>gem-item-user</module>
+		<module>gem-server-admin</module>
+		<module>gem-server-config</module>
+		<module>gem-server-eureka</module>
+		<module>gem-server-logs</module>
+		<module>gem-server-sleuth</module>
+		<module>gem-server-socket</module>
+		<module>gem-server-task</module>
+		<module>gem-server-zuul</module>
+	</modules>
+</project>

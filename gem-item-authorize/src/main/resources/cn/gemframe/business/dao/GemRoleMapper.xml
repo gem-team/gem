@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gemframe.business.dao.GemRoleMapper">
+	<select id="findRoleByUser" parameterType="map" resultType="GemRole">
+	  SELECT 
+	      dtr.* 
+	  FROM 
+	      gem_tab_role dtr,gem_tab_user_role dtur
+	  WHERE 
+	      dtr.id=dtur.role_id AND dtur.user_id=#{id}
+	</select>
+	
+	<select id="findRoleIdsByUser" parameterType="map" resultType="long">
+	  SELECT 
+	      dtr.id
+	  FROM 
+	      gem_tab_role dtr,gem_tab_user_role dtur
+	  WHERE 
+	      dtr.id=dtur.role_id AND dtur.user_id=#{id}
+	</select>
+
+</mapper>
