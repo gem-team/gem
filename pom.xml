@@ -3,11 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>gem</artifactId>
+	<artifactId>gemframe</artifactId>
 	<packaging>pom</packaging>
 	<parent>
 		<groupId>cn.gemframe</groupId>
-		<artifactId>gemframe</artifactId>
+		<artifactId>GemFrame</artifactId>
 		<version>1.0.0</version>
 	</parent>
 	<properties>
@@ -55,6 +55,7 @@
 	</build>
 	<modules>
 		<module>gem-utils-jpa</module>
+		<module>gem-item-activity</module>
 		<module>gem-item-authorize</module>
 		<module>gem-item-domain</module>
 		<module>gem-item-sso</module>
