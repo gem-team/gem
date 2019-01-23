@@ -1,7 +1,7 @@
 /**
- * @Title:ÒµÎñ¶ÔÏó
- * @Description:Á÷³ÌĞÅÏ¢
- * Copyright 2018 GemFrame¼¼ÊõÍÅ¶Ó http://www.gemframe.cn
+ * @Title:ä¸šåŠ¡å¯¹è±¡
+ * @Description:æµç¨‹ä¿¡æ¯
+ * Copyright 2018 GemFrameæŠ€æœ¯å›¢é˜Ÿ http://www.gemframe.cn
  * Company: DianShiKongJian (Beijing) Technology Co., Ltd.
  * @author Ryan
  * @date 2018-11-1 16:06:06
@@ -26,8 +26,8 @@ import java.io.Serializable;
 
 import lombok.Data;
 /**
- * @Title:ÒµÎñ¶ÔÏó
- * @Description:Á÷³ÌĞÅÏ¢
+ * @Title:ä¸šåŠ¡å¯¹è±¡
+ * @Description:æµç¨‹ä¿¡æ¯
  * @author Ryan
  * @date 2018-11-1 16:06:06
  * @version V1.0

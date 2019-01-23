@@ -1,7 +1,7 @@
 /**
- * @Title:·şÎñÆô¶¯Àà
- * @Description:·şÎñÆô¶¯
- * Copyright 2018 GemFrame¼¼ÊõÍÅ¶Ó http://www.gemframe.cn
+ * @Title:æœåŠ¡å¯åŠ¨ç±»
+ * @Description:æœåŠ¡å¯åŠ¨
+ * Copyright 2018 GemFrameæŠ€æœ¯å›¢é˜Ÿ http://www.gemframe.cn
  * Company: DianShiKongJian (Beijing) Technology Co., Ltd.
  * @author Ryan
  * @date 2018-11-1 16:06:06
@@ -26,8 +26,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @Title:·şÎñÆô¶¯Àà
- * @Description:·şÎñÆô¶¯
+ * @Title:æœåŠ¡å¯åŠ¨ç±»
+ * @Description:æœåŠ¡å¯åŠ¨
  * @author Ryan
  * @date 2018-11-1 16:06:06
  * @version V1.0
@@ -36,6 +36,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ActivityServerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ActivityServerApplication.class, args);
-		System.out.println("---ActivityServerApplication£ºÆô¶¯³É¹¦---");
+		System.out.println("---ActivityServerApplicationï¼šå¯åŠ¨æˆåŠŸ---");
 	}
 }
