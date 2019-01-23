@@ -1,7 +1,7 @@
 /**
- * @Title:ÒµÎñ¶ÔÏó
- * @Description:ÈÎÎñÏêÇéĞÅÏ¢
- * Copyright 2018 GemFrame¼¼ÊõÍÅ¶Ó http://www.gemframe.cn
+ * @Title:mapperå±‚
+ * @Description:ç”¨æˆ·ç®¡ç†
+ * Copyright 2018 GemFrameæŠ€æœ¯å›¢é˜Ÿ http://www.gemframe.cn
  * Company: DianShiKongJian (Beijing) Technology Co., Ltd.
  * @author Ryan
  * @date 2018-11-1 16:06:06
@@ -20,24 +20,20 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package cn.gemframe.business.domain;
+package cn.gemframe.business.dao;
 
-import java.io.Serializable;
-import java.util.Map;
-
-import lombok.Data;
+import cn.gemframe.business.domain.GemUser;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.stereotype.Repository;
 /**
- * @Title:ÒµÎñ¶ÔÏó
- * @Description:ÈÎÎñÏêÇéĞÅÏ¢
+ * @Title:mapperå±‚
+ * @Description:ç”¨æˆ·ç®¡ç†
  * @author Ryan
  * @date 2018-11-1 16:06:06
  * @version V1.0
  */
-@Data
-public class TaskDetails implements Serializable{
+@Repository
+public interface GemUserDao extends JpaRepository<GemUser, Long>,JpaSpecificationExecutor<GemUser>{
 
-	private static final long serialVersionUID = 1L;
-	private String id;
-	private String name;
-	private Map<String,Object> variables;
 }

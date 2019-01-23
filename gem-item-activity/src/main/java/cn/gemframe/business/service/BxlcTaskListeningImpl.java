@@ -1,3 +1,25 @@
+/**
+ * @Title:业务实现
+ * @Description:流程处理
+ * Copyright 2018 GemFrame技术团队 http://www.gemframe.cn
+ * Company: DianShiKongJian (Beijing) Technology Co., Ltd.
+ * @author Ryan
+ * @date 2018-11-1 16:06:06
+ * @version V1.0
+ *
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
 package cn.gemframe.business.service;
 
 import java.io.InputStream;
@@ -28,6 +50,13 @@ import org.springframework.stereotype.Service;
 
 import cn.gemframe.business.domain.TaskDetails;
 
+/**
+ * @Title:业务实现
+ * @Description:流程管理
+ * @author Ryan
+ * @date 2018-11-1 16:06:06
+ * @version V1.0
+ */
 @Service
 public class BxlcTaskListeningImpl implements TaskListener {
 
@@ -68,7 +97,7 @@ public class BxlcTaskListeningImpl implements TaskListener {
 	/**
 	 * @Description:发布流程
 	 * @param type 流程的key
-	 * @author: 赵兴炎
+	 * @author: Ryan
 	 * @date 2018年11月18日
 	 */
 	public String deployment(String type) {
@@ -83,7 +112,7 @@ public class BxlcTaskListeningImpl implements TaskListener {
 	 * @Description:填写申请的表单
 	 * @param rmb 报销金额
 	 * @param key 流程的key
-	 * @author: 赵兴炎
+	 * @author: Ryan
 	 * @date 2018年11月18日
 	 */
 	public String saveBxlcForm(String rmb, String key) {
@@ -97,7 +126,7 @@ public class BxlcTaskListeningImpl implements TaskListener {
 	/**
 	 * @Description:流程列表
 	 * @param id 用户主键
-	 * @author: 赵兴炎
+	 * @author: Ryan
 	 * @date 2018年11月18日
 	 */
 	public List<TaskDetails> findTaskList(String id) {
@@ -122,7 +151,7 @@ public class BxlcTaskListeningImpl implements TaskListener {
 	 * @Description:执行任务
 	 * @param id 任务主键
 	 * @param cause 备注
-	 * @author: 赵兴炎
+	 * @author: Ryan
 	 * @date 2018年11月18日
 	 */
 	public String performTask(String id, String cause) {
@@ -135,7 +164,7 @@ public class BxlcTaskListeningImpl implements TaskListener {
 
 	/**
 	 * @Description:流程列表
-	 * @author: 赵兴炎
+	 * @author: Ryan
 	 * @date 2018年11月18日
 	 */
 	public List<ProcessVersion> findProcessList() {
@@ -158,7 +187,7 @@ public class BxlcTaskListeningImpl implements TaskListener {
 	/**
 	 * @Description:删除流程
 	 * @param id 流程主键
-	 * @author: 赵兴炎
+	 * @author: Ryan
 	 * @date 2018年11月18日
 	 */
 	public String deletProcess(String id) {
@@ -169,7 +198,7 @@ public class BxlcTaskListeningImpl implements TaskListener {
 	/**
 	 * @Description:查看流程图
 	 * @param id 流程主键
-	 * @author: 赵兴炎
+	 * @author: Ryan
 	 * @date 2018年11月18日
 	 */
 	public InputStream image(String id) {
