@@ -2,31 +2,31 @@
 -- ----------------------------
 -- Records of gem_tab_dictionary
 -- ----------------------------
-INSERT INTO `gem_tab_dictionary` VALUES ('1120927971213312', '2019-01-05 14:44:57', '2019-01-07 09:25:56', '∑÷◊È2µƒ◊”◊È2', 'zu2-2', '1', null, '2', '◊È2-◊”◊È2', '459532355174400', '1', '0');
-INSERT INTO `gem_tab_dictionary` VALUES ('1121432504041472', '2019-01-05 14:46:57', '2019-01-06 22:40:52', '∑÷◊È2µƒ◊”◊È2', 'zu2-2', 'undefined', null, '2', '◊È2-◊”◊È21111', '459532355174400', '2', '0');
+INSERT INTO `gem_tab_dictionary` VALUES ('1120927971213312', '2019-01-05 14:44:57', '2019-01-07 09:25:56', 'ÂàÜÁªÑ2ÁöÑÂ≠êÁªÑ2', 'zu2-2', '1', null, '2', 'ÁªÑ2-Â≠êÁªÑ2', '459532355174400', '1', '0');
+INSERT INTO `gem_tab_dictionary` VALUES ('1121432504041472', '2019-01-05 14:46:57', '2019-01-06 22:40:52', 'ÂàÜÁªÑ2ÁöÑÂ≠êÁªÑ2', 'zu2-2', 'undefined', null, '2', 'ÁªÑ2-Â≠êÁªÑ21111', '459532355174400', '2', '0');
 INSERT INTO `gem_tab_dictionary` VALUES ('1210424054448128', '2019-01-05 20:40:35', '2019-01-05 20:40:35', null, null, null, null, null, '22', null, null, '0');
-INSERT INTO `gem_tab_dictionary` VALUES ('1775190825172992', '2019-01-07 10:04:45', '2019-01-07 10:04:45', '∑÷◊È2µƒ◊”◊È1', 'zu1-1', '0', null, '1', '1-2', '458977872379904', null, '1');
-INSERT INTO `gem_tab_dictionary` VALUES ('1782120910094336', '2019-01-07 10:32:18', '2019-01-07 15:09:20', '', '', '1', null, '2', '◊È1-◊”◊È1', '458977872379904', '9', '0');
-INSERT INTO `gem_tab_dictionary` VALUES ('1788144371040256', '2019-01-07 10:56:14', '2019-01-07 19:04:54', '111', 'sex', '2', null, '3', '–‘±', '1782120910094336', '11', '1');
-INSERT INTO `gem_tab_dictionary` VALUES ('1802415305850880', '2019-01-07 11:52:56', '2019-01-07 19:04:32', '11', 'mz', '2', null, '3', '√Ò◊Â', '1782120910094336', '11', '1');
-INSERT INTO `gem_tab_dictionary` VALUES ('1859699641876480', '2019-01-07 15:40:34', '2019-01-07 15:40:34', null, '2', '3', '3', null, '¬˙◊Â', '1802415305850880', '1', '1');
-INSERT INTO `gem_tab_dictionary` VALUES ('1870904171364352', '2019-01-07 16:25:05', '2019-01-07 19:05:18', null, '1', '3', '0', null, 'ƒ–', '1788144371040256', '1', '0');
+INSERT INTO `gem_tab_dictionary` VALUES ('1775190825172992', '2019-01-07 10:04:45', '2019-01-07 10:04:45', 'ÂàÜÁªÑ2ÁöÑÂ≠êÁªÑ1', 'zu1-1', '0', null, '1', '1-2', '458977872379904', null, '1');
+INSERT INTO `gem_tab_dictionary` VALUES ('1782120910094336', '2019-01-07 10:32:18', '2019-01-07 15:09:20', '', '', '1', null, '2', 'ÁªÑ1-Â≠êÁªÑ1', '458977872379904', '9', '0');
+INSERT INTO `gem_tab_dictionary` VALUES ('1788144371040256', '2019-01-07 10:56:14', '2019-01-07 19:04:54', '111', 'sex', '2', null, '3', 'ÊÄßÂà´', '1782120910094336', '11', '1');
+INSERT INTO `gem_tab_dictionary` VALUES ('1802415305850880', '2019-01-07 11:52:56', '2019-01-07 19:04:32', '11', 'mz', '2', null, '3', 'Ê∞ëÊóè', '1782120910094336', '11', '1');
+INSERT INTO `gem_tab_dictionary` VALUES ('1859699641876480', '2019-01-07 15:40:34', '2019-01-07 15:40:34', null, '2', '3', '3', null, 'Êª°Êóè', '1802415305850880', '1', '1');
+INSERT INTO `gem_tab_dictionary` VALUES ('1870904171364352', '2019-01-07 16:25:05', '2019-01-07 19:05:18', null, '1', '3', '0', null, 'Áî∑', '1788144371040256', '1', '0');
 INSERT INTO `gem_tab_dictionary` VALUES ('1886445451804672', '2019-01-07 17:26:51', '2019-01-07 17:26:51', null, '22', '22', '222', null, '222', '1788144371040256', '222', '22');
 INSERT INTO `gem_tab_dictionary` VALUES ('1889118368497664', '2019-01-07 17:37:28', '2019-01-07 17:37:28', null, '1', '3', '1', null, '1', '1886559364907008', '1', '0');
 INSERT INTO `gem_tab_dictionary` VALUES ('1889244231172096', '2019-01-07 17:37:58', '2019-01-07 17:37:58', null, '2', '3', '2', null, '2', '1886559364907008', '2', '0');
-INSERT INTO `gem_tab_dictionary` VALUES ('1911307947933696', '2019-01-07 19:05:38', '2019-01-07 19:05:38', null, '1', '3', '1', null, '≈Æ', '1788144371040256', '2', '0');
+INSERT INTO `gem_tab_dictionary` VALUES ('1911307947933696', '2019-01-07 19:05:38', '2019-01-07 19:05:38', null, '1', '3', '1', null, 'Â•≥', '1788144371040256', '2', '0');
 INSERT INTO `gem_tab_dictionary` VALUES ('1960537966182400', '2019-01-07 22:21:16', '2019-01-07 22:21:16', null, '11', '3', '11', null, '11', '1903470345650176', '11', '0');
-INSERT INTO `gem_tab_dictionary` VALUES ('1962003581829120', '2019-01-07 22:27:05', '2019-01-14 15:37:36', '1', '121', '2', null, '3', '≤‚ ‘', '1120927971213312', '1', '1');
+INSERT INTO `gem_tab_dictionary` VALUES ('1962003581829120', '2019-01-07 22:27:05', '2019-01-14 15:37:36', '1', '121', '2', null, '3', 'ÊµãËØï', '1120927971213312', '1', '1');
 INSERT INTO `gem_tab_dictionary` VALUES ('1962078953472000', '2019-01-07 22:27:23', '2019-01-07 22:27:23', null, '1', '3', '3', null, '2', '1962003581829120', '4', '0');
 INSERT INTO `gem_tab_dictionary` VALUES ('1970163977748480', '2019-01-07 22:59:31', '2019-01-07 22:59:40', null, '1', '3', '1', null, '1111', '1962003581829120', '1', '0');
-INSERT INTO `gem_tab_dictionary` VALUES ('211', '2019-01-03 18:54:36', '2019-01-03 22:42:25', '∫∫◊Â', 'hz', '3', '∫∫◊Â', '3', '∫∫◊Â', '459349521268736', '1', '0');
-INSERT INTO `gem_tab_dictionary` VALUES ('212', '2019-01-03 18:54:36', '2019-01-03 22:42:39', 'ªÿ◊Â', 'hz', '3', 'ªÿ◊Â', '3', 'ªÿ◊Â', '459349521268736', '2', '0');
-INSERT INTO `gem_tab_dictionary` VALUES ('458977872379904', '2019-01-03 18:54:36', '2019-01-07 18:02:32', '∑÷◊È1', 'zu1', '1', null, '1', '◊È1-update', '-1', '1', '0');
-INSERT INTO `gem_tab_dictionary` VALUES ('459349521268736', '2019-01-03 18:56:04', '2019-01-06 22:34:18', '√Ò◊Â◊÷µ‰1', 'mz1', 'undefined', null, '2', '√Ò◊Â6666', '458977872379904', '1', '0');
-INSERT INTO `gem_tab_dictionary` VALUES ('459532355174400', '2019-01-03 18:56:48', '2019-01-04 11:59:53', '∑÷◊È2', 'zu2', '1', null, '1', '◊È2', '-1', '2', '0');
-INSERT INTO `gem_tab_dictionary` VALUES ('459868805464064', '2019-01-03 18:58:08', '2019-01-06 22:16:29', '∑÷◊È2µƒ◊”◊È1', 'zu2-1', '1', null, '2', '◊È2-◊”◊È1', '459532355174400', '11', '0');
-INSERT INTO `gem_tab_dictionary` VALUES ('460006210863104', '2019-01-03 18:58:41', '2019-01-06 22:37:06', 'update', 'zu1-1', 'undefined', null, '2', '◊È11', '458977872379904', '0', '0');
-INSERT INTO `gem_tab_dictionary` VALUES ('523493578571776', '2019-01-03 23:10:58', '2019-01-03 23:10:58', 'Œ¨Œ·∂˚◊È', 'sex', '3', null, '2', 'Œ¨Œ·∂˚◊Â', '459349521268736', null, '0');
+INSERT INTO `gem_tab_dictionary` VALUES ('211', '2019-01-03 18:54:36', '2019-01-03 22:42:25', 'Ê±âÊóè', 'hz', '3', 'Ê±âÊóè', '3', 'Ê±âÊóè', '459349521268736', '1', '0');
+INSERT INTO `gem_tab_dictionary` VALUES ('212', '2019-01-03 18:54:36', '2019-01-03 22:42:39', 'ÂõûÊóè', 'hz', '3', 'ÂõûÊóè', '3', 'ÂõûÊóè', '459349521268736', '2', '0');
+INSERT INTO `gem_tab_dictionary` VALUES ('458977872379904', '2019-01-03 18:54:36', '2019-01-07 18:02:32', 'ÂàÜÁªÑ1', 'zu1', '1', null, '1', 'ÁªÑ1-update', '-1', '1', '0');
+INSERT INTO `gem_tab_dictionary` VALUES ('459349521268736', '2019-01-03 18:56:04', '2019-01-06 22:34:18', 'Ê∞ëÊóèÂ≠óÂÖ∏1', 'mz1', 'undefined', null, '2', 'Ê∞ëÊóè6666', '458977872379904', '1', '0');
+INSERT INTO `gem_tab_dictionary` VALUES ('459532355174400', '2019-01-03 18:56:48', '2019-01-04 11:59:53', 'ÂàÜÁªÑ2', 'zu2', '1', null, '1', 'ÁªÑ2', '-1', '2', '0');
+INSERT INTO `gem_tab_dictionary` VALUES ('459868805464064', '2019-01-03 18:58:08', '2019-01-06 22:16:29', 'ÂàÜÁªÑ2ÁöÑÂ≠êÁªÑ1', 'zu2-1', '1', null, '2', 'ÁªÑ2-Â≠êÁªÑ1', '459532355174400', '11', '0');
+INSERT INTO `gem_tab_dictionary` VALUES ('460006210863104', '2019-01-03 18:58:41', '2019-01-06 22:37:06', 'update', 'zu1-1', 'undefined', null, '2', 'ÁªÑ11', '458977872379904', '0', '0');
+INSERT INTO `gem_tab_dictionary` VALUES ('523493578571776', '2019-01-03 23:10:58', '2019-01-03 23:10:58', 'Áª¥ÂêæÂ∞îÁªÑ', 'sex', '3', null, '2', 'Áª¥ÂêæÂ∞îÊóè', '459349521268736', null, '0');
 
 
 -- ----------------------------
@@ -46,22 +46,22 @@ INSERT INTO `gem_tab_member` VALUES ('1', null, null, '1', '1', '1', '1', '', '1
 -- ----------------------------
 DROP TABLE IF EXISTS `gem_tab_organ`;
 CREATE TABLE `gem_tab_organ` (
-  `id` varchar(20) NOT NULL COMMENT '÷˜º¸',
-  `create_time` datetime DEFAULT NULL COMMENT '¥¥Ω® ±º‰',
-  `update_time` datetime DEFAULT NULL COMMENT '–ﬁ∏ƒ ±º‰',
-  `approval_time` datetime DEFAULT NULL COMMENT '≈˙◊º≥…¡¢»’∆⁄',
-  `approval_unit` varchar(255) DEFAULT NULL COMMENT '≈˙◊º≥…¡¢µ•Œª',
-  `organ_cause` varchar(255) DEFAULT NULL COMMENT '±∏◊¢',
-  `compile_number` varchar(255) DEFAULT NULL COMMENT '±‡÷Ø ˝',
-  `organ_intrduc` varchar(255) DEFAULT NULL COMMENT 'ºÚΩÈ',
-  `organ_levels` int(11) DEFAULT NULL COMMENT '≤ø√≈º∂±',
-  `organ_code` varchar(255) DEFAULT NULL COMMENT 'ª˙ππ¥˙¬Î',
-  `organ_name` varchar(255) DEFAULT NULL COMMENT '≤ø√≈√˚≥∆',
-  `organ_type` varchar(255) DEFAULT NULL COMMENT '≤ø√≈¿‡–Õ',
-  `parent_id` bigint(20) DEFAULT NULL COMMENT '∏∏º∂',
-  `set_number` varchar(255) DEFAULT NULL COMMENT '≥…¡¢Œƒ∫≈',
-  `organ_unit` varchar(255) DEFAULT NULL COMMENT 'µ•ŒªºÚ≥∆',
-  `valid_time` datetime DEFAULT NULL COMMENT '…˙–ß»’∆⁄',
+  `id` varchar(20) NOT NULL COMMENT '‰∏ªÈîÆ',
+  `create_time` datetime DEFAULT NULL COMMENT 'ÂàõÂª∫Êó∂Èó¥',
+  `update_time` datetime DEFAULT NULL COMMENT '‰øÆÊîπÊó∂Èó¥',
+  `approval_time` datetime DEFAULT NULL COMMENT 'ÊâπÂáÜÊàêÁ´ãÊó•Êúü',
+  `approval_unit` varchar(255) DEFAULT NULL COMMENT 'ÊâπÂáÜÊàêÁ´ãÂçï‰Ωç',
+  `organ_cause` varchar(255) DEFAULT NULL COMMENT 'Â§áÊ≥®',
+  `compile_number` varchar(255) DEFAULT NULL COMMENT 'ÁºñÁªáÊï∞',
+  `organ_intrduc` varchar(255) DEFAULT NULL COMMENT 'ÁÆÄ‰ªã',
+  `organ_levels` int(11) DEFAULT NULL COMMENT 'ÈÉ®Èó®Á∫ßÂà´',
+  `organ_code` varchar(255) DEFAULT NULL COMMENT 'Êú∫ÊûÑ‰ª£Á†Å',
+  `organ_name` varchar(255) DEFAULT NULL COMMENT 'ÈÉ®Èó®ÂêçÁß∞',
+  `organ_type` varchar(255) DEFAULT NULL COMMENT 'ÈÉ®Èó®Á±ªÂûã',
+  `parent_id` bigint(20) DEFAULT NULL COMMENT 'Áà∂Á∫ß',
+  `set_number` varchar(255) DEFAULT NULL COMMENT 'ÊàêÁ´ãÊñáÂè∑',
+  `organ_unit` varchar(255) DEFAULT NULL COMMENT 'Âçï‰ΩçÁÆÄÁß∞',
+  `valid_time` datetime DEFAULT NULL COMMENT 'ÁîüÊïàÊó•Êúü',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -74,14 +74,14 @@ INSERT INTO `gem_tab_permiss_attr` VALUES ('1861643424956416', '2019-01-07 15:48
 INSERT INTO `gem_tab_permiss_attr` VALUES ('1869223476002816', '2019-01-07 16:18:25', '2019-01-07 16:18:25', '111', '11', '1');
 INSERT INTO `gem_tab_permiss_attr` VALUES ('1880149667282944', '2019-01-07 17:01:50', '2019-01-07 17:01:54', '2', '2', '1621295272493056');
 INSERT INTO `gem_tab_permiss_attr` VALUES ('1962735252996096', '2019-01-07 22:29:59', '2019-01-07 22:29:59', '2', '1', '1433000320106496');
-INSERT INTO `gem_tab_permiss_attr` VALUES ('3017887963611136', '2019-01-10 20:22:47', '2019-01-15 13:15:43', 'xm', '–’√˚', '3017606811025408');
-INSERT INTO `gem_tab_permiss_attr` VALUES ('3017929818570752', '2019-01-10 20:22:57', '2019-01-10 20:22:57', 'nl', 'ƒÍ¡‰', '3017606811025408');
-INSERT INTO `gem_tab_permiss_attr` VALUES ('3017962475421696', '2019-01-10 20:23:05', '2019-01-10 20:23:05', 'xb', '–‘±', '3017606811025408');
-INSERT INTO `gem_tab_permiss_attr` VALUES ('3018026010738688', '2019-01-10 20:23:20', '2019-01-10 20:23:20', 'xz', '–«◊˘', '3017606811025408');
-INSERT INTO `gem_tab_permiss_attr` VALUES ('3018060911542272', '2019-01-10 20:23:29', '2019-01-10 20:23:29', 'xl', '—ß¿˙', '3017606811025408');
-INSERT INTO `gem_tab_permiss_attr` VALUES ('434780081160192', '2019-01-03 17:18:27', '2019-01-03 17:19:18', 'ZD01', '◊÷∂Œ1', '612');
-INSERT INTO `gem_tab_permiss_attr` VALUES ('435011308945408', '2019-01-03 17:19:22', '2019-01-03 17:19:52', 'ZD02', '◊÷∂Œ2', '612');
-INSERT INTO `gem_tab_permiss_attr` VALUES ('435027566067712', '2019-01-03 17:19:26', '2019-01-03 17:20:03', 'ZD03', '◊÷∂Œ3', '612');
+INSERT INTO `gem_tab_permiss_attr` VALUES ('3017887963611136', '2019-01-10 20:22:47', '2019-01-15 13:15:43', 'xm', 'ÂßìÂêç', '3017606811025408');
+INSERT INTO `gem_tab_permiss_attr` VALUES ('3017929818570752', '2019-01-10 20:22:57', '2019-01-10 20:22:57', 'nl', 'Âπ¥ÈæÑ', '3017606811025408');
+INSERT INTO `gem_tab_permiss_attr` VALUES ('3017962475421696', '2019-01-10 20:23:05', '2019-01-10 20:23:05', 'xb', 'ÊÄßÂà´', '3017606811025408');
+INSERT INTO `gem_tab_permiss_attr` VALUES ('3018026010738688', '2019-01-10 20:23:20', '2019-01-10 20:23:20', 'xz', 'ÊòüÂ∫ß', '3017606811025408');
+INSERT INTO `gem_tab_permiss_attr` VALUES ('3018060911542272', '2019-01-10 20:23:29', '2019-01-10 20:23:29', 'xl', 'Â≠¶ÂéÜ', '3017606811025408');
+INSERT INTO `gem_tab_permiss_attr` VALUES ('434780081160192', '2019-01-03 17:18:27', '2019-01-03 17:19:18', 'ZD01', 'Â≠óÊÆµ1', '612');
+INSERT INTO `gem_tab_permiss_attr` VALUES ('435011308945408', '2019-01-03 17:19:22', '2019-01-03 17:19:52', 'ZD02', 'Â≠óÊÆµ2', '612');
+INSERT INTO `gem_tab_permiss_attr` VALUES ('435027566067712', '2019-01-03 17:19:26', '2019-01-03 17:20:03', 'ZD03', 'Â≠óÊÆµ3', '612');
 
 
 -- ----------------------------
@@ -90,48 +90,48 @@ INSERT INTO `gem_tab_permiss_attr` VALUES ('435027566067712', '2019-01-03 17:19:
 INSERT INTO `gem_tab_permiss_param` VALUES ('1870049078607872', '2019-01-07 16:21:41', '2019-01-07 16:21:41', '4', '4', '4', '4', null, null, '1');
 INSERT INTO `gem_tab_permiss_param` VALUES ('1880191006343168', '2019-01-07 17:01:59', '2019-01-07 17:01:59', '4', '3', '5', '5', null, null, '1621295272493056');
 INSERT INTO `gem_tab_permiss_param` VALUES ('1962758153895936', '2019-01-07 22:30:05', '2019-01-07 22:30:05', '3', '3', '3', '3', null, null, '1433000320106496');
-INSERT INTO `gem_tab_permiss_param` VALUES ('3018184756756480', '2019-01-10 20:23:58', '2019-01-10 20:23:58', 'xm', '–’√˚', 'name', 'String', null, null, '3017606811025408');
-INSERT INTO `gem_tab_permiss_param` VALUES ('3018257255301120', '2019-01-10 20:24:16', '2019-01-10 20:24:16', 'nl', 'ƒÍ¡‰', 'age', 'int', null, null, '3017606811025408');
-INSERT INTO `gem_tab_permiss_param` VALUES ('438125923598336', '2019-01-03 17:45:48', '2019-01-03 17:45:48', 'where1', '◊÷∂Œ1', 'name', 'string', 'À…', '0', '612');
+INSERT INTO `gem_tab_permiss_param` VALUES ('3018184756756480', '2019-01-10 20:23:58', '2019-01-10 20:23:58', 'xm', 'ÂßìÂêç', 'name', 'String', null, null, '3017606811025408');
+INSERT INTO `gem_tab_permiss_param` VALUES ('3018257255301120', '2019-01-10 20:24:16', '2019-01-10 20:24:16', 'nl', 'Âπ¥ÈæÑ', 'age', 'int', null, null, '3017606811025408');
+INSERT INTO `gem_tab_permiss_param` VALUES ('438125923598336', '2019-01-03 17:45:48', '2019-01-03 17:45:48', 'where1', 'Â≠óÊÆµ1', 'name', 'string', 'Êùæ', '0', '612');
 
 
 -- ----------------------------
 -- Records of gem_tab_permissions
 -- ----------------------------
-INSERT INTO `gem_tab_permissions` VALUES ('1', '2019-01-02 23:08:55', '2019-01-07 16:38:52', '√Ë ˆ', 'CD_1', '2', '1', '0', 'π§◊˜Ã®', '-1', '/', null);
-INSERT INTO `gem_tab_permissions` VALUES ('1350391544086528', '2019-01-06 05:56:45', '2019-01-10 20:21:00', '“ªº∂', 'dd1', '', '1', '0', '“ªº∂≤Àµ•', '-1', 'yiji', null);
-INSERT INTO `gem_tab_permissions` VALUES ('1838323639975936', '2019-01-07 14:15:37', '2019-01-07 15:44:59', '', '∞¥≈•±‡¬Î', null, null, '1', '1', '1', '', null);
-INSERT INTO `gem_tab_permissions` VALUES ('1838336034144256', '2019-01-07 14:15:40', '2019-01-07 14:22:44', '', '∞¥≈•±‡¬Î', null, null, '1', '2', '1', '', null);
-INSERT INTO `gem_tab_permissions` VALUES ('1838349430751232', '2019-01-07 14:15:44', '2019-01-07 14:22:47', '', '∞¥≈•±‡¬Î', null, null, '1', '3', '1', '', null);
+INSERT INTO `gem_tab_permissions` VALUES ('1', '2019-01-02 23:08:55', '2019-01-07 16:38:52', 'ÊèèËø∞', 'CD_1', '2', '1', '0', 'Â∑•‰ΩúÂè∞', '-1', '/', null);
+INSERT INTO `gem_tab_permissions` VALUES ('1350391544086528', '2019-01-06 05:56:45', '2019-01-10 20:21:00', '‰∏ÄÁ∫ß', 'dd1', '', '1', '0', '‰∏ÄÁ∫ßËèúÂçï', '-1', 'yiji', null);
+INSERT INTO `gem_tab_permissions` VALUES ('1838323639975936', '2019-01-07 14:15:37', '2019-01-07 15:44:59', '', 'ÊåâÈíÆÁºñÁ†Å', null, null, '1', '1', '1', '', null);
+INSERT INTO `gem_tab_permissions` VALUES ('1838336034144256', '2019-01-07 14:15:40', '2019-01-07 14:22:44', '', 'ÊåâÈíÆÁºñÁ†Å', null, null, '1', '2', '1', '', null);
+INSERT INTO `gem_tab_permissions` VALUES ('1838349430751232', '2019-01-07 14:15:44', '2019-01-07 14:22:47', '', 'ÊåâÈíÆÁºñÁ†Å', null, null, '1', '3', '1', '', null);
 INSERT INTO `gem_tab_permissions` VALUES ('1899051176624128', '2019-01-07 18:16:56', '2019-01-07 18:16:56', '', '', null, null, '1', '1', '1433000320106496', '', null);
 INSERT INTO `gem_tab_permissions` VALUES ('1899068314550272', '2019-01-07 18:17:00', '2019-01-07 18:17:04', '', '2', null, null, '1', '2', '1433000320106496', '', null);
-INSERT INTO `gem_tab_permissions` VALUES ('3017533859495936', '2019-01-10 20:21:23', '2019-01-10 20:21:23', 'erji', 'erji', 'erji', '2', '0', '∂˛º∂≤Àµ•', '1350391544086528', 'erji', null);
-INSERT INTO `gem_tab_permissions` VALUES ('3017606811025408', '2019-01-10 20:21:40', '2019-01-17 20:40:41', 'sanji', 'sanji', 'sanji', '3', '0', '»˝º∂“≥√Ê', '3017533859495936', 'auth/role/testTableWithSelect', null);
-INSERT INTO `gem_tab_permissions` VALUES ('3017689539477504', '2019-01-10 20:22:00', '2019-01-17 20:40:19', 'add', 'add', null, null, '1', 'ÃÌº”1', '3017606811025408', 'add', null);
-INSERT INTO `gem_tab_permissions` VALUES ('3017754572161024', '2019-01-10 20:22:16', '2019-01-10 20:22:16', 'chak', '≤Èø¥', null, null, '1', '≤Èø¥', '3017606811025408', '≤Èø¥', null);
-INSERT INTO `gem_tab_permissions` VALUES ('6', '2019-01-02 23:08:55', '2019-01-02 23:09:01', '√Ë ˆ', 'CD_6', '1', '1', '0', 'œµÕ≥π‹¿Ì', '-1', 'testPath', null);
-INSERT INTO `gem_tab_permissions` VALUES ('61', '2019-01-02 23:08:55', '2019-01-02 23:09:01', '√Ë ˆ', 'CD_61', '1', '2', '0', '”√ªß”Î ⁄»®', '6', 'testPath', null);
-INSERT INTO `gem_tab_permissions` VALUES ('611', '2019-01-02 23:08:55', '2019-01-02 23:09:01', '√Ë ˆ', 'CD_611', '1', '3', '0', 'Ω«…´π‹¿Ì', '61', 'auth/role/index', null);
-INSERT INTO `gem_tab_permissions` VALUES ('612', '2019-01-02 23:08:55', '2019-01-02 23:09:01', '√Ë ˆ', 'CD_612', '1', '3', '0', '”√ªßπ‹¿Ì', '61', 'auth/user/index', null);
-INSERT INTO `gem_tab_permissions` VALUES ('6122', '2019-01-02 23:08:55', '2019-01-07 11:55:16', '√Ë ˆ', 'NN_6122', '1', '4', '1', '”√ªßœÍ«È1', '612', 'http://www.baidu.com', null);
-INSERT INTO `gem_tab_permissions` VALUES ('62', '2019-01-02 23:08:55', '2019-01-06 06:41:47', '√Ë ˆ', 'CD_62', 'icon', '2', '0', 'ª˘¥°…Ë÷√', '6', 'testPath', null);
-INSERT INTO `gem_tab_permissions` VALUES ('621', '2019-01-02 23:08:55', '2019-01-02 23:09:01', '√Ë ˆ', 'CD_621', '1', '3', '0', '◊÷µ‰Œ¨ª§', '62', 'common/dic/index', null);
-INSERT INTO `gem_tab_permissions` VALUES ('622', '2019-01-02 23:08:55', '2019-01-02 23:09:01', '√Ë ˆ', 'CD_622', '1', '3', '0', '◊ ‘¥π‹¿Ì', '62', 'auth/permissions/index', null);
-INSERT INTO `gem_tab_permissions` VALUES ('63', '2019-01-02 23:08:55', '2019-01-06 06:41:39', '√Ë ˆ', 'CD_63', 'icon', '2', '0', 'œµÕ≥º‡øÿ', '6', 'testPath', null);
+INSERT INTO `gem_tab_permissions` VALUES ('3017533859495936', '2019-01-10 20:21:23', '2019-01-10 20:21:23', 'erji', 'erji', 'erji', '2', '0', '‰∫åÁ∫ßËèúÂçï', '1350391544086528', 'erji', null);
+INSERT INTO `gem_tab_permissions` VALUES ('3017606811025408', '2019-01-10 20:21:40', '2019-01-17 20:40:41', 'sanji', 'sanji', 'sanji', '3', '0', '‰∏âÁ∫ßÈ°µÈù¢', '3017533859495936', 'auth/role/testTableWithSelect', null);
+INSERT INTO `gem_tab_permissions` VALUES ('3017689539477504', '2019-01-10 20:22:00', '2019-01-17 20:40:19', 'add', 'add', null, null, '1', 'Ê∑ªÂä†1', '3017606811025408', 'add', null);
+INSERT INTO `gem_tab_permissions` VALUES ('3017754572161024', '2019-01-10 20:22:16', '2019-01-10 20:22:16', 'chak', 'Êü•Áúã', null, null, '1', 'Êü•Áúã', '3017606811025408', 'Êü•Áúã', null);
+INSERT INTO `gem_tab_permissions` VALUES ('6', '2019-01-02 23:08:55', '2019-01-02 23:09:01', 'ÊèèËø∞', 'CD_6', '1', '1', '0', 'Á≥ªÁªüÁÆ°ÁêÜ', '-1', 'testPath', null);
+INSERT INTO `gem_tab_permissions` VALUES ('61', '2019-01-02 23:08:55', '2019-01-02 23:09:01', 'ÊèèËø∞', 'CD_61', '1', '2', '0', 'Áî®Êà∑‰∏éÊéàÊùÉ', '6', 'testPath', null);
+INSERT INTO `gem_tab_permissions` VALUES ('611', '2019-01-02 23:08:55', '2019-01-02 23:09:01', 'ÊèèËø∞', 'CD_611', '1', '3', '0', 'ËßíËâ≤ÁÆ°ÁêÜ', '61', 'auth/role/index', null);
+INSERT INTO `gem_tab_permissions` VALUES ('612', '2019-01-02 23:08:55', '2019-01-02 23:09:01', 'ÊèèËø∞', 'CD_612', '1', '3', '0', 'Áî®Êà∑ÁÆ°ÁêÜ', '61', 'auth/user/index', null);
+INSERT INTO `gem_tab_permissions` VALUES ('6122', '2019-01-02 23:08:55', '2019-01-07 11:55:16', 'ÊèèËø∞', 'NN_6122', '1', '4', '1', 'Áî®Êà∑ËØ¶ÊÉÖ1', '612', 'http://www.baidu.com', null);
+INSERT INTO `gem_tab_permissions` VALUES ('62', '2019-01-02 23:08:55', '2019-01-06 06:41:47', 'ÊèèËø∞', 'CD_62', 'icon', '2', '0', 'Âü∫Á°ÄËÆæÁΩÆ', '6', 'testPath', null);
+INSERT INTO `gem_tab_permissions` VALUES ('621', '2019-01-02 23:08:55', '2019-01-02 23:09:01', 'ÊèèËø∞', 'CD_621', '1', '3', '0', 'Â≠óÂÖ∏Áª¥Êä§', '62', 'common/dic/index', null);
+INSERT INTO `gem_tab_permissions` VALUES ('622', '2019-01-02 23:08:55', '2019-01-02 23:09:01', 'ÊèèËø∞', 'CD_622', '1', '3', '0', 'ËµÑÊ∫êÁÆ°ÁêÜ', '62', 'auth/permissions/index', null);
+INSERT INTO `gem_tab_permissions` VALUES ('63', '2019-01-02 23:08:55', '2019-01-06 06:41:39', 'ÊèèËø∞', 'CD_63', 'icon', '2', '0', 'Á≥ªÁªüÁõëÊéß', '6', 'testPath', null);
 
 
 -- ----------------------------
 -- Records of gem_tab_role
 -- ----------------------------
-INSERT INTO `gem_tab_role` VALUES ('1', null, null, '1', '1', '1', 'π‹¿Ì‘±', null);
-INSERT INTO `gem_tab_role` VALUES ('2271293752410112', '2019-01-08 18:56:05', '2019-01-11 17:21:32', '', '', '4916009262448640', 'Ω«…´3', '2');
+INSERT INTO `gem_tab_role` VALUES ('1', null, null, '1', '1', '1', 'ÁÆ°ÁêÜÂëò', null);
+INSERT INTO `gem_tab_role` VALUES ('2271293752410112', '2019-01-08 18:56:05', '2019-01-11 17:21:32', '', '', '4916009262448640', 'ËßíËâ≤3', '2');
 INSERT INTO `gem_tab_role` VALUES ('4946797815201792', null, null, null, '2222', null, '2222', null);
 INSERT INTO `gem_tab_role` VALUES ('4947229220339712', null, null, null, '2222', null, '2222', null);
-INSERT INTO `gem_tab_role` VALUES ('4953320234745856', null, '2019-01-11 22:32:09', '11', '8889', '4916009262448640', 'Ω«…´2', '1');
+INSERT INTO `gem_tab_role` VALUES ('4953320234745856', null, '2019-01-11 22:32:09', '11', '8889', '4916009262448640', 'ËßíËâ≤2', '1');
 INSERT INTO `gem_tab_role` VALUES ('512223851824807936', null, null, null, null, null, null, null);
 INSERT INTO `gem_tab_role` VALUES ('512225863266205696', null, null, null, '22', '1', '11', null);
 INSERT INTO `gem_tab_role` VALUES ('512387324370223104', null, null, null, '2230', '2', '2230', null);
-INSERT INTO `gem_tab_role` VALUES ('512387422235918336', null, null, null, '88', '2', '∑Ω∑®', null);
+INSERT INTO `gem_tab_role` VALUES ('512387422235918336', null, null, null, '88', '2', 'ÊñπÊ≥ï', null);
 INSERT INTO `gem_tab_role` VALUES ('512387473507090432', null, null, null, '44', '512387422235918340', '44', null);
 INSERT INTO `gem_tab_role` VALUES ('513482950868729856', null, null, null, '123', '513482538048552960', '123', null);
 INSERT INTO `gem_tab_role` VALUES ('513483392713490432', null, null, null, '163', '513482538048552960', '158', null);
@@ -141,7 +141,7 @@ INSERT INTO `gem_tab_role` VALUES ('513483583541739520', null, null, null, '48',
 -- ----------------------------
 -- Records of gem_tab_role_group
 -- ----------------------------
-INSERT INTO `gem_tab_role_group` VALUES ('4916009262448640', null, '2019-01-10 20:26:00', '‘À”™◊È', '-1', '3');
+INSERT INTO `gem_tab_role_group` VALUES ('4916009262448640', null, '2019-01-10 20:26:00', 'ËøêËê•ÁªÑ', '-1', '3');
 INSERT INTO `gem_tab_role_group` VALUES ('512221872478224384', null, null, '123', '512221571083927550', null);
 INSERT INTO `gem_tab_role_group` VALUES ('512222051109437440', null, null, '1234', '512221571083927550', null);
 INSERT INTO `gem_tab_role_group` VALUES ('512222224145448960', null, null, '000', '512221571083927550', null);
@@ -154,10 +154,10 @@ INSERT INTO `gem_tab_role_group` VALUES ('512387664658300928', null, null, '132'
 INSERT INTO `gem_tab_role_group` VALUES ('512387704965562368', null, null, '123', '512387664658300900', null);
 INSERT INTO `gem_tab_role_group` VALUES ('513482611977355264', null, null, '22', '513482538048552960', null);
 INSERT INTO `gem_tab_role_group` VALUES ('513483449189793792', null, null, '85', '513482538048552960', null);
-INSERT INTO `gem_tab_role_group` VALUES ('707617706672128', null, '2019-01-04 11:44:25', 'Ω«…´◊È≤‚ ‘1', '-1', '1');
-INSERT INTO `gem_tab_role_group` VALUES ('713433142722560', '2019-01-04 11:45:43', '2019-01-04 12:32:46', 'Ω«…´◊È≤‚ ‘1œ¬“ª◊È', '707617706672128', '1');
-INSERT INTO `gem_tab_role_group` VALUES ('713563090649088', '2019-01-04 11:46:14', '2019-01-04 12:17:58', 'Ω«…´◊È≤‚ ‘1œ¬∂˛◊È', '707617706672128', '2');
-INSERT INTO `gem_tab_role_group` VALUES ('713589137276928', '2019-01-04 11:46:20', '2019-01-09 15:45:59', 'Ω«…´◊È≤‚ ‘1œ¬»˝◊È', '707617706672128', '3');
+INSERT INTO `gem_tab_role_group` VALUES ('707617706672128', null, '2019-01-04 11:44:25', 'ËßíËâ≤ÁªÑÊµãËØï1', '-1', '1');
+INSERT INTO `gem_tab_role_group` VALUES ('713433142722560', '2019-01-04 11:45:43', '2019-01-04 12:32:46', 'ËßíËâ≤ÁªÑÊµãËØï1‰∏ã‰∏ÄÁªÑ', '707617706672128', '1');
+INSERT INTO `gem_tab_role_group` VALUES ('713563090649088', '2019-01-04 11:46:14', '2019-01-04 12:17:58', 'ËßíËâ≤ÁªÑÊµãËØï1‰∏ã‰∫åÁªÑ', '707617706672128', '2');
+INSERT INTO `gem_tab_role_group` VALUES ('713589137276928', '2019-01-04 11:46:20', '2019-01-09 15:45:59', 'ËßíËâ≤ÁªÑÊµãËØï1‰∏ã‰∏âÁªÑ', '707617706672128', '3');
 
 
 -- ----------------------------
@@ -224,21 +224,21 @@ INSERT INTO `gem_tab_role_permis_attr` VALUES ('5', null, null, '6', '612', '1')
 -- ----------------------------
 -- Records of gem_tab_role_permiss_param
 -- ----------------------------
-INSERT INTO `gem_tab_role_permiss_param` VALUES ('1', null, null, null, '◊÷∂Œ1', 'name', 'string', '0', 'zhangsan', '612', '1');
-INSERT INTO `gem_tab_role_permiss_param` VALUES ('2', null, null, null, '◊÷∂Œ2', 'age', 'int', '0', '3', '612', '1');
-INSERT INTO `gem_tab_role_permiss_param` VALUES ('3645692321660928', null, null, null, '–’√˚', 'name', 'String', '111', '1', '3017606811025408', '4953320234745856');
-INSERT INTO `gem_tab_role_permiss_param` VALUES ('3645692745285632', null, null, null, 'ƒÍ¡‰', 'age', 'int', '1', '3', '3017606811025408', '4953320234745856');
+INSERT INTO `gem_tab_role_permiss_param` VALUES ('1', null, null, null, 'Â≠óÊÆµ1', 'name', 'string', '0', 'zhangsan', '612', '1');
+INSERT INTO `gem_tab_role_permiss_param` VALUES ('2', null, null, null, 'Â≠óÊÆµ2', 'age', 'int', '0', '3', '612', '1');
+INSERT INTO `gem_tab_role_permiss_param` VALUES ('3645692321660928', null, null, null, 'ÂßìÂêç', 'name', 'String', '111', '1', '3017606811025408', '4953320234745856');
+INSERT INTO `gem_tab_role_permiss_param` VALUES ('3645692745285632', null, null, null, 'Âπ¥ÈæÑ', 'age', 'int', '1', '3', '3017606811025408', '4953320234745856');
 INSERT INTO `gem_tab_role_permiss_param` VALUES ('3645738849075200', null, null, null, '4', '4', '4', '1', '0', '1', '4953320234745856');
-INSERT INTO `gem_tab_role_permiss_param` VALUES ('5575464958230528', null, null, null, 'ƒÍ¡‰', 'age', 'int', '18', '0', '3017606811025408', '2271293752410112');
+INSERT INTO `gem_tab_role_permiss_param` VALUES ('5575464958230528', null, null, null, 'Âπ¥ÈæÑ', 'age', 'int', '18', '0', '3017606811025408', '2271293752410112');
 
 
 -- ----------------------------
 -- Records of gem_tab_user
 -- ----------------------------
-INSERT INTO `gem_tab_user` VALUES ('1', '2019-01-14 16:15:11', '2019-01-14 16:15:11', null, '≤‚ ‘”√', 'test@126.com', null, null, null, 'π‹¿Ì‘±', '$2a$10$i6H2IaRcHYuTRuEiys3P7Otegu9Pd0TK/t3bnFvSain7PGdU18Tum', null, '1', 'admin', null);
+INSERT INTO `gem_tab_user` VALUES ('1', '2019-01-14 16:15:11', '2019-01-14 16:15:11', null, 'ÊµãËØïÁî®', 'test@126.com', null, null, null, 'ÁÆ°ÁêÜÂëò', '$2a$10$i6H2IaRcHYuTRuEiys3P7Otegu9Pd0TK/t3bnFvSain7PGdU18Tum', null, '1', 'admin', null);
 INSERT INTO `gem_tab_user` VALUES ('2356103992770560', '2019-01-09 00:33:06', '2019-01-11 14:54:09', null, null, '6', null, null, null, '6', '$2a$10$Lu.vi18XYCdisAmZQf/Ftu0J6blaPnFmZBfXdlxDc.UAWWH6amvRe', '6', '1', '6', null);
 INSERT INTO `gem_tab_user` VALUES ('2356157214294016', '2019-01-09 00:33:19', '2019-01-11 14:54:14', null, null, '22222', null, null, null, '22222', '$2a$10$ufT.USIMFu3PFc6C/Gu7.O28KAhzQbo.497gPODcdhJ1i6GwMO34a', '222', '0', '222', null);
-INSERT INTO `gem_tab_user` VALUES ('741195098292224', '2019-01-04 13:36:02', '2019-01-17 11:12:28', null, '≤‚ ‘”√', 'wangsong@126.com', null, null, null, 'ÕıÀ…À…', '$2a$10$nIFH02MqP/0w3dKQaF5pvOY/6AtOuyTXMkcsdhkM9GGeMlGHpZTTS', '18511165624', '0', 'wangsongsong', null);
+INSERT INTO `gem_tab_user` VALUES ('741195098292224', '2019-01-04 13:36:02', '2019-01-17 11:12:28', null, 'ÊµãËØïÁî®', 'wangsong@126.com', null, null, null, 'ÁéãÊùæÊùæ', '$2a$10$nIFH02MqP/0w3dKQaF5pvOY/6AtOuyTXMkcsdhkM9GGeMlGHpZTTS', '18511165624', '0', 'wangsongsong', null);
 
 -- ----------------------------
 -- Records of gem_tab_user_role
