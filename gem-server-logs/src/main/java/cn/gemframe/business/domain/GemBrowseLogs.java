@@ -20,11 +20,14 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.gemframe.business.service;
+package cn.gemframe.business.domain;
 
-import org.springframework.data.domain.Page;
+import java.io.Serializable;
+import java.util.Date;
 
-import com.gemframe.business.domain.GemBrowseLogs;
+import org.springframework.data.annotation.Id;
+
+import lombok.Data;
 
 /**
  * @Title:
@@ -33,9 +36,48 @@ import com.gemframe.business.domain.GemBrowseLogs;
  * @date 2018-11-1 16:06:06
  * @version V1.0
  */
-public interface GemBrowseLogsService {
+@Data
+public class GemBrowseLogs implements Serializable {
+	private static final long serialVersionUID = -5453735788732292301L;
 
-	void addStoreBrowseLogs(GemBrowseLogs browseLogs);
+	/**
+	 * 主键
+	 */
+	@Id
+	private Long id;
 
-	Page<GemBrowseLogs> findStoreBrowseLogs(GemBrowseLogs browseLogs, int page, int pageSize);
+	/**
+	 * 用户主键
+	 */
+	private String userId;
+
+	/**
+	 * 用户名
+	 */
+	private String userName;
+
+	/**
+	 * 方法
+	 */
+	private String methodUrl;
+
+	/**
+	 * 方法名字
+	 */
+	private String methodName;
+
+	/**
+	 * 方法类型
+	 */
+	private String methodType;
+
+	/**
+	 * Ip地址
+	 */
+	private String ip;
+
+	/**
+	 * 创建时间
+	 */
+	private Date createDate;
 }

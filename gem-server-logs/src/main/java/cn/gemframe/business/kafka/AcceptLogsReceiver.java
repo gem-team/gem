@@ -20,14 +20,11 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.gemframe.business.domain;
+package cn.gemframe.business.kafka;
 
-import java.io.Serializable;
-import java.util.Date;
-
-import org.springframework.data.annotation.Id;
-
-import lombok.Data;
+import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.cloud.stream.annotation.StreamListener;
+import org.springframework.stereotype.Component;
 
 /**
  * @Title:
@@ -36,48 +33,12 @@ import lombok.Data;
  * @date 2018-11-1 16:06:06
  * @version V1.0
  */
-@Data
-public class GemBrowseLogs implements Serializable {
-	private static final long serialVersionUID = -5453735788732292301L;
-	
-	/**
-	 * 主键
-	 */
-	@Id
-	private Long id;
-	
-	/**
-	 * 用户主键
-	 */
-	private String userId;
-	
-	/**
-	 * 用户名
-	 */
-	private String userName;
-	
-	/**
-	 * 方法
-	 */
-	private String methodUrl;
-	
-	/**
-	 * 方法名字
-	 */
-	private String methodName;
-	
-	/**
-	 * 方法类型
-	 */
-	private String methodType;
-	
-	/**
-	 * Ip地址
-	 */
-	private String ip;
-	
-	/**
-	 * 创建时间
-	 */
-	private Date createDate;
+@Component
+@EnableBinding(AcceptLogsInterface.class)
+public class AcceptLogsReceiver {
+
+	@StreamListener(AcceptLogsInterface.INPUT)
+	private void receive(String message) {
+		System.out.println(message);
+	}
 }

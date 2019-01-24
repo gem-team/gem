@@ -1,6 +1,6 @@
 /**
- * @Title:服务启动类
- * @Description:服务启动
+ * @Title:
+ * @Description:
  * Copyright 2018 GemFrame技术团队 http://www.gemframe.cn
  * Company: DianShiKongJian (Beijing) Technology Co., Ltd.
  * @author Ryan
@@ -20,24 +20,29 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.gemframe;
+package cn.gemframe.business.controller;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import cn.gemframe.business.service.impl.GemTaskServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Title:服务启动类
- * @Description:服务启动
+ * @Title:
+ * @Description:
  * @author Ryan
  * @date 2018-11-1 16:06:06
  * @version V1.0
  */
-@EnableEurekaClient
-@SpringBootApplication
-public class LogsServerApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(LogsServerApplication.class, args);
-		System.out.println("---LogsServerApplication：启动成功---");
+@RestController
+public class GemTaskController {
+
+	@Autowired
+	private GemTaskServiceImpl taskServiceImpl;
+
+	@GetMapping("updateTaskCron")
+	public String updateTaskCron(String cron) {
+		taskServiceImpl.setCron(cron);
+		return "success";
 	}
 }

@@ -1,6 +1,6 @@
 /**
- * @Title:服务启动类
- * @Description:服务启动
+ * @Title:
+ * @Description:
  * Copyright 2018 GemFrame技术团队 http://www.gemframe.cn
  * Company: DianShiKongJian (Beijing) Technology Co., Ltd.
  * @author Ryan
@@ -20,26 +20,24 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.gemframe;
+package cn.gemframe.business.dao;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.config.server.EnableConfigServer;
+import cn.gemframe.business.domain.GemBrowseLogs;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
 /**
- * @Title:服务启动类
- * @Description:服务启动
+ * @Title:
+ * @Description:
  * @author Ryan
  * @date 2018-11-1 16:06:06
  * @version V1.0
  */
-@EnableConfigServer
-@SpringBootApplication
-@EnableDiscoveryClient
-public class ConfigServerApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(ConfigServerApplication.class, args);
-		System.out.println("---ConfigServerApplication：启动成功---");
-	}
+@Repository
+public interface GemBrowseLogsDao extends MongoRepository<GemBrowseLogs, Long> {
+
+	Page<GemBrowseLogs> findByUserName(String userName, Pageable pageable);
+
 }

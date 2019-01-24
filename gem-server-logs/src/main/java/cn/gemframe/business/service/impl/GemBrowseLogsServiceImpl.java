@@ -20,8 +20,10 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.gemframe.business.service.impl;
+package cn.gemframe.business.service.impl;
 
+import cn.gemframe.business.dao.GemBrowseLogsDao;
+import cn.gemframe.business.domain.GemBrowseLogs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -29,9 +31,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
-import com.gemframe.business.dao.GemBrowseLogsDao;
-import com.gemframe.business.domain.GemBrowseLogs;
-import com.gemframe.business.service.GemBrowseLogsService;
+import cn.gemframe.business.service.GemBrowseLogsService;
 
 /**
  * @Title:
@@ -42,7 +42,7 @@ import com.gemframe.business.service.GemBrowseLogsService;
  */
 @Service
 public class GemBrowseLogsServiceImpl implements GemBrowseLogsService {
-	
+
 	@Autowired
 	private GemBrowseLogsDao browseLogsDao;
 

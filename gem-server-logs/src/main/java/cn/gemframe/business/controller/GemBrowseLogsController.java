@@ -20,8 +20,9 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.gemframe.business.controller;
+package cn.gemframe.business.controller;
 
+import cn.gemframe.business.domain.GemBrowseLogs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
@@ -29,8 +30,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gemframe.business.domain.GemBrowseLogs;
-import com.gemframe.business.service.GemBrowseLogsService;
+import cn.gemframe.business.service.GemBrowseLogsService;
 
 /**
  * @Title:
@@ -41,7 +41,7 @@ import com.gemframe.business.service.GemBrowseLogsService;
  */
 @RestController
 public class GemBrowseLogsController {
-	
+
 	@Autowired
 	private GemBrowseLogsService storeBrowseLogsService;
 

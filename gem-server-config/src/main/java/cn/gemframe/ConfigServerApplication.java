@@ -20,11 +20,12 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.gemframe;
+package cn.gemframe;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.config.server.EnableConfigServer;
 
 /**
  * @Title:服务启动类
@@ -33,11 +34,12 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * @date 2018-11-1 16:06:06
  * @version V1.0
  */
+@EnableConfigServer
 @SpringBootApplication
-@EnableScheduling
-public class TaskServerApplication {
+@EnableDiscoveryClient
+public class ConfigServerApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(TaskServerApplication.class, args);
-		System.out.println("---TaskServerApplication：启动成功---");
+		SpringApplication.run(ConfigServerApplication.class, args);
+		System.out.println("---ConfigServerApplication：启动成功---");
 	}
 }

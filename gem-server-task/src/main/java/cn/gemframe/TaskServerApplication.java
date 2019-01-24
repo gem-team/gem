@@ -1,6 +1,6 @@
 /**
- * @Title:
- * @Description:
+ * @Title:服务启动类
+ * @Description:服务启动
  * Copyright 2018 GemFrame技术团队 http://www.gemframe.cn
  * Company: DianShiKongJian (Beijing) Technology Co., Ltd.
  * @author Ryan
@@ -20,25 +20,24 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.gemframe.business.dao;
+package cn.gemframe;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.stereotype.Repository;
-
-import com.gemframe.business.domain.GemBrowseLogs;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
- * @Title:
- * @Description:
+ * @Title:服务启动类
+ * @Description:服务启动
  * @author Ryan
  * @date 2018-11-1 16:06:06
  * @version V1.0
  */
-@Repository
-public interface GemBrowseLogsDao extends MongoRepository<GemBrowseLogs, Long> {
-	
-	Page<GemBrowseLogs> findByUserName(String userName, Pageable pageable);
-
+@SpringBootApplication
+@EnableScheduling
+public class TaskServerApplication {
+	public static void main(String[] args) {
+		SpringApplication.run(TaskServerApplication.class, args);
+		System.out.println("---TaskServerApplication：启动成功---");
+	}
 }

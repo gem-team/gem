@@ -20,11 +20,10 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.gemframe.business.kafka;
+package cn.gemframe.business.service;
 
-import org.springframework.cloud.stream.annotation.EnableBinding;
-import org.springframework.cloud.stream.annotation.StreamListener;
-import org.springframework.stereotype.Component;
+import cn.gemframe.business.domain.GemBrowseLogs;
+import org.springframework.data.domain.Page;
 
 /**
  * @Title:
@@ -33,12 +32,9 @@ import org.springframework.stereotype.Component;
  * @date 2018-11-1 16:06:06
  * @version V1.0
  */
-@Component
-@EnableBinding(AcceptLogsInterface.class)
-public class AcceptLogsReceiver {
+public interface GemBrowseLogsService {
 
-	@StreamListener(AcceptLogsInterface.INPUT)
-	private void receive(String message) {
-		System.out.println(message);
-	}
+	void addStoreBrowseLogs(GemBrowseLogs browseLogs);
+
+	Page<GemBrowseLogs> findStoreBrowseLogs(GemBrowseLogs browseLogs, int page, int pageSize);
 }

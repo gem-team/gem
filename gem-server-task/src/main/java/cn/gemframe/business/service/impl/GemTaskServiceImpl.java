@@ -20,7 +20,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.gemframe.business.service.impl;
+package cn.gemframe.business.service.impl;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

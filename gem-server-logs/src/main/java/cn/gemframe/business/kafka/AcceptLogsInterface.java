@@ -20,7 +20,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.gemframe.business.kafka;
+package cn.gemframe.business.kafka;
 
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.messaging.SubscribableChannel;
@@ -35,7 +35,7 @@ import org.springframework.messaging.SubscribableChannel;
 public interface AcceptLogsInterface {
 
 	String INPUT= "acceptLogs";
- 
+
 	@Input(AcceptLogsInterface.INPUT)
 	SubscribableChannel acceptMessage();
 }

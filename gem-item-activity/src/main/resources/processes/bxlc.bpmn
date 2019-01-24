@@ -4,18 +4,18 @@
     <startEvent id="startevent1" name="Start"></startEvent>
     <userTask id="submit" name="提交申请">
       <extensionElements>
-        <activiti:taskListener event="create" class="com.dianshi.business.service.BxlcTaskListeningImpl"></activiti:taskListener>
+        <activiti:taskListener event="create" class="cn.gemframe.business.service.BxlcTaskListeningImpl"></activiti:taskListener>
       </extensionElements>
     </userTask>
     <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="submit"></sequenceFlow>
     <userTask id="project " name="项目经理审批">
       <extensionElements>
-        <activiti:taskListener event="create" class="com.dianshi.business.service.BxlcTaskListeningImpl"></activiti:taskListener>
+        <activiti:taskListener event="create" class="cn.gemframe.business.service.BxlcTaskListeningImpl"></activiti:taskListener>
       </extensionElements>
     </userTask>
     <userTask id="department " name="部门经理审批">
       <extensionElements>
-        <activiti:taskListener event="create" class="com.dianshi.business.service.BxlcTaskListeningImpl"></activiti:taskListener>
+        <activiti:taskListener event="create" class="cn.gemframe.business.service.BxlcTaskListeningImpl"></activiti:taskListener>
       </extensionElements>
     </userTask>
     <endEvent id="endevent1" name="End"></endEvent>
