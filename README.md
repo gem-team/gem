@@ -135,7 +135,8 @@ GemFrame
 
 **如何交流、反馈、参与贡献？**
 
-- 开发文档：http://doc.gemframe.cn
+- 开发文档：https://apidoc.gitee.com/gemteam/gemframe
+- 项目文档：https://gemframe.mydoc.io
 - 官方社区：https://www.gemframe.cn/bbs
 - gitee仓库：https://gitee.com/gemteam/gemframe
 - github仓库：https://gitee.com/gem-team/gemframe
