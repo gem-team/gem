@@ -36,7 +36,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @date 2018-11-1 16:06:06
  * @version V1.0
  */
-@FeignClient(name = "authorize")
+@FeignClient(name = "auth")
 public interface GemRoleFeginClient {
 
 	/**
