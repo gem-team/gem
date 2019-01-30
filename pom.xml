@@ -60,7 +60,6 @@
 		<module>gem-item-domain</module>
 		<module>gem-item-sso</module>
 		<module>gem-item-common</module>
-		<module>gem-item-user</module>
 		<module>gem-server-admin</module>
 		<module>gem-server-config</module>
 		<module>gem-server-eureka</module>

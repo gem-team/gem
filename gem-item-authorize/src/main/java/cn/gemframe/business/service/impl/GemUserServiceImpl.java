@@ -28,6 +28,7 @@ import java.util.List;
 import java.util.Map;
 
 import cn.gemframe.business.dao.GemUserMapper;
+import cn.gemframe.business.dao.GemUserRoleMapper;
 import cn.gemframe.business.domain.GemUser;
 import cn.gemframe.business.vo.GemUserRoleVo;
 import cn.gemframe.business.vo.GemUserVo;
@@ -40,7 +41,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import cn.gemframe.business.feign.GemRoleFeginClient;
 import cn.gemframe.business.service.GemUserService;
 import com.github.pagehelper.PageHelper;
 
@@ -61,13 +61,12 @@ public class GemUserServiceImpl implements GemUserService {
 	@Autowired
 	private GemUserMapper userMapper;
 	@Autowired
-	private GemRoleFeginClient roleFeginClient;
-	
-	
+	private GemUserRoleMapper userRoleMapper;
+
 	/**
 	 * @Description: 添加用户
 //	 * @param userVo 用户参数实体
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@Override
@@ -86,18 +85,18 @@ public class GemUserServiceImpl implements GemUserService {
 				gemUserRoleVo.setId(GemFrameIdUtlis.Id());
 				gemUserRoleVo.setUserId(userId);
 				gemUserRoleVo.setRoleId(new Long(roleId));
-				roleFeginClient.saveUserAndRole(gemUserRoleVo);
+				userRoleMapper.insert(gemUserRoleVo);
 			}
 		}
 		return userMapper.insert(user);
 	}
-	
+
 	/**
 	 * @Description:条件查询用户
 	 * @param userVo 用户参数实体
 	 * @param pageNum 当前页
 	 * @param pageSize 每页显示的数据
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@Override
@@ -124,7 +123,7 @@ public class GemUserServiceImpl implements GemUserService {
 		}
 		return userMapper.selectByExample(example);
 	}
-	
+
 	public String getPassWord(String passWordType,String card,String userName) {
 		if(GemFrameStringUtlis.isNotBlank(passWordType) && passWordType.length()>0) {
 			if(passWordType.equalsIgnoreCase("0")) {
@@ -145,7 +144,7 @@ public class GemUserServiceImpl implements GemUserService {
 	/**
 	 * @Description:删除用户
 	 * @param id 用户主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@Override
@@ -156,7 +155,7 @@ public class GemUserServiceImpl implements GemUserService {
 	/**
 	 * @Description: 修改用户
 	 * @param userVo 用户参数实体
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@Override
@@ -171,7 +170,7 @@ public class GemUserServiceImpl implements GemUserService {
 	 * @param roleId 角色主键
 	 * @param pageNum 当前页
 	 * @param pageSize 每页显示的数据
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@Override
@@ -186,7 +185,7 @@ public class GemUserServiceImpl implements GemUserService {
 	/**
 	 * @Description:用户详情
 	 * @param id 用户主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@Override

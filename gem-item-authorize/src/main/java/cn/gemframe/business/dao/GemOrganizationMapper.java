@@ -1,6 +1,6 @@
 /**
  * @Title:mapper层
- * @Description:员工信息管理
+ * @Description:组织管理
  * Copyright 2018 GemFrame技术团队 http://www.gemframe.cn
  * Company: DianShiKongJian (Beijing) Technology Co., Ltd.
  * @author Ryan
@@ -22,16 +22,16 @@
  */
 package cn.gemframe.business.dao;
 
-import cn.gemframe.business.domain.GemMember;
+import cn.gemframe.business.domain.GemOrganization;
 import cn.gemframe.config.mapper.GemFrameMapper;
 
 /**
  * @Title:mapper层
- * @Description:员工信息管理
+ * @Description:组织管理
  * @author Ryan
  * @date 2018-11-1 16:06:06
  * @version V1.0
  */
-public interface GemMemberMapper extends GemFrameMapper<GemMember> {
+public interface GemOrganizationMapper extends GemFrameMapper<GemOrganization> {
 
 }
