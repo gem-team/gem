@@ -35,82 +35,89 @@ import java.util.List;
  * @version V1.0
  */
 public interface GemPermissionsService {
-
 	/**
-	 * @Description: 根据角色获取权限菜单
-	 * @param id 角色主键
-	 * @author: Ryan  
-	 * @date 2018年11月5日
-	 */
-	List<GemPermissions> findPermissByRoleId(Long id);
-
-
-	/**
-	 * @Description: 根据角色获取权限按钮
-	 * @param id 角色主键
+	 * @Description:添加权限
+	 * @param  permissionsVo 权限接受参数实体
 	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	List<Long> findPermissMunByRoleId(Long id);
-
+	Integer savePermission(GemPermissionsVo permissionsVo);
 	/**
-	 * @Description: 根据用户获取权限菜单
-	 * @param id 用户主键
-	 * @author: Ryan  
+	 * @Description:删除权限
+	 * @param id 权限主键集合
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	List<GemPermissions> findPermissByUserId(Long id);
-
-	/**
-	 * @Description:查看权限详情
-	 * @param id 权限主键
-	 * @author: Ryan  
-	 * @date 2018年11月5日
-	 */
-	GemPermissions findPermissById(Long id);
+	Integer deletePermissionById(Long[] id);
 
 	/**
 	 * @Description:修改权限
 	 * @param permissionsVo 权限接受参数实体
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	Integer updatePermiss(GemPermissionsVo permissionsVo);
-
+	Integer updatePermission(GemPermissionsVo permissionsVo);
 	/**
-	 * @Description:添加权限
-	 * @param  permissionsVo 权限接受参数实体
-	 * @author: Ryan  
+	 * @Description:查看权限详情
+	 * @param id 权限主键
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	Integer savePermiss(GemPermissionsVo permissionsVo);
+	GemPermissions findPermissionById(Long id);
 
 	/**
-	 * @Description:删除权限
-	 * @param id 权限主键集合
-	 * @author: Ryan  
-	 * @date 2018年11月5日
-	 */
-	Integer deletePermissById(Long[] id);
-
-	/**
-	 * @Description: 查询所有权限菜单
-	 * @param ids 权限主键集合
-	 * @param type 0查询拥有的权限，不拥有的不显示 ，1查询所有，字段标识是否拥有
-	 * @author: Ryan  
-	 * @date 2018年11月5日
-	 */
-	List<GemPermissions> findAllMenu(List<Long> ids, String type);
-
-	/**
-	 * @Description:查看菜单下的子权限
-	 * @param id 菜单主键
+	 * @Description: 根据角色获取权限菜单
 	 * @param roleId 角色主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	List<GemPermissions> findPermissByParentId(Long id, Long roleId);
+	List<GemPermissions> findPermissionByRoleId(Long roleId);
+	/**
+	 * @Description: 根据角色获取权限菜单(包含未选中)
+	 * @param roleId 角色主键
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	List<GemPermissions> findPermissionSelectByRoleId(Long roleId);
+	/**
+	 * @Description: 根据角色和菜单获取权限-按钮（包含未选中）
+	 * @param roleId 角色主键
+	 * @param permissionId 权限（菜单）主键
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	List<GemPermissions> findPermissionSelectByRoleIdAndPermissionId(Long roleId,Long permissionId);
+	/**
+	 * @Description: 根据角色和菜单获取权限-按钮（仅仅包含选中的）
+	 * @param roleId 角色主键
+	 * @param permissionId 权限（菜单）主键
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	List<GemPermissions> findPermissionOnlySelectByRoleIdAndPermissionId(Long roleId,Long permissionId);
 
-	List<GemPermissions> findUserPermiss(Long id);
+	/**
+	 * @Description: 根据用户获取权限菜单
+	 * @param userId 用户主键
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	List<GemPermissions> findPermissionByUserId(Long userId);
+	/**
+	 * @Description: 获取系统中的权限-菜单
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	List<GemPermissions> findPermissionMenu();
+
+	/**
+	 * @Description: 查看菜单下的按钮
+	 * @param parentId 菜单主键
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	List<GemPermissions> findPermissionButtonByParentId(Long parentId);
+
+
 
 }

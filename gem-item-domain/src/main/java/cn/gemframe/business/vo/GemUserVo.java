@@ -40,9 +40,8 @@ import javax.persistence.Transient;
 public class GemUserVo extends GemUser {
 
 	private static final long serialVersionUID = 1L;
-	
-	private @Transient(cause="密码生成类型 0 默认密码 1 等于用户名 2 证件后8位")int passwordType;
-	private @Transient(cause="证件号码") String card;
-	private @Transient(cause="角色集合") String[] roles;
+
+	private @Transient(cause="密码生成类型 0 默认密码 1 等于用户名 2 证件后8位")Integer passwordType;
+	private @Transient(cause="角色集合") Long[] roleIds;
 
 }

@@ -36,7 +36,7 @@ public interface GemUserRoleService {
 	/**
 	 * @Description:根据角色删除关联关系
 	 * @param id 角色主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	Integer deleteByRoleId(Long id);
@@ -44,7 +44,7 @@ public interface GemUserRoleService {
 	/**
 	 * @Description:根据用户删除关联关系
 	 * @param id 用户主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	Integer deleteRoleByUserId(Long id);
@@ -52,9 +52,16 @@ public interface GemUserRoleService {
 	/**
 	 * @Description: 添加用户和角色的关联关系
 	 * @param userRole 角色和用户中间表的实体
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	Integer saveUserAndRole(GemUserRole userRole);
+	/**
+	 * 跟新用户对应的角色关系
+	 * @param userId
+	 * @param roleIds
+	 * @return
+	 */
+	Integer updateUserToRole(Long userId,Long[] roleIds);
 
 }

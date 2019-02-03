@@ -43,14 +43,14 @@ import cn.gemframe.business.service.GemRoleGroupService;
  */
 @RestController
 public class GemRoleGroupController {
-	
+
 	@Autowired
 	private GemRoleGroupService roleGroupService;
-	
+
 	/**
 	 * @Description:添加角色组
 	 * @param roleGroupVo 接收参数的实体对象
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@PostMapping("roleGroup/saveRoleGroup")
@@ -58,23 +58,23 @@ public class GemRoleGroupController {
 		Integer flag=roleGroupService.saveRoleGroup(roleGroupVo);
 		return ResponseEntity.ok(ResultData.SUCCESS(flag));
 	}
-	
+
 	/**
 	 * @Description:删除角色组
 	 * @param id 主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
-	@PostMapping("roleGroup/deletRoleGroup")
-	public ResponseEntity<ResultData> deletRoleGroup(Long id){
-		Integer flag=roleGroupService.deletRoleGroup(id);
+	@PostMapping("roleGroup/deleteRoleGroup")
+	public ResponseEntity<ResultData> deleteRoleGroup(Long id){
+		Integer flag=roleGroupService.deleteRoleGroup(id);
 		return ResponseEntity.ok(ResultData.SUCCESS(flag));
 	}
-	
+
 	/**
 	 * @Description:修改角色组
 	 * @param roleGroupVo 接收参数的实体对象
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@PostMapping("roleGroup/updateRoleGroup")
@@ -82,11 +82,11 @@ public class GemRoleGroupController {
 		Integer flag=roleGroupService.updateRoleGroup(roleGroupVo);
 		return ResponseEntity.ok(ResultData.SUCCESS(flag));
 	}
-	
+
 	/**
 	 * @Description:查询角色组详情
 	 * @param id 主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@PostMapping("roleGroup/findRoleGroupById")
@@ -94,17 +94,16 @@ public class GemRoleGroupController {
 		GemRoleGroup flag=roleGroupService.findRoleGroupById(id);
 		return ResponseEntity.ok(ResultData.SUCCESS(flag));
 	}
-	
+
 	/**
-	 * @Description:查询角色组下面的所有角色
-	 * @param name  角色名称
-	 * @author: Ryan  
+	 * @Description:查询角色组以及所有角色（组成tree结构）
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@PostMapping("roleGroup/findGroupRoleList")
-	public ResponseEntity<ResultData> findGroupRoleList(String name){
-		List<GemRoleGroup> flag=roleGroupService.findGroupRoleList(name);
+	public ResponseEntity<ResultData> findGroupRoleList(){
+		List<GemRoleGroup> flag=roleGroupService.findGroupRoleList();
 		return ResponseEntity.ok(ResultData.SUCCESS(flag));
 	}
-	
+
 }

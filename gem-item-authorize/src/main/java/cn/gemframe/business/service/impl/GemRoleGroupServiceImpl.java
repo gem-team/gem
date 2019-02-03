@@ -50,7 +50,7 @@ import tk.mybatis.mapper.entity.Example.Criteria;
  */
 @Service
 public class GemRoleGroupServiceImpl implements GemRoleGroupService {
-	
+
 	@Autowired
 	private GemRoleMapper roleMapper;
 	@Autowired
@@ -59,7 +59,7 @@ public class GemRoleGroupServiceImpl implements GemRoleGroupService {
 	/**
 	 * @Description:添加角色组
 	 * @param roleGroupVo 接收参数的实体对象
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@Override
@@ -74,19 +74,19 @@ public class GemRoleGroupServiceImpl implements GemRoleGroupService {
 	/**
 	 * @Description:删除角色组
 	 * @param id 主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@Override
-	public Integer deletRoleGroup(Long id) {
+	public Integer deleteRoleGroup(Long id) {
 		return roleGroupMapper.deleteByPrimaryKey(id);
 	}
 
-	
+
 	/**
 	 * @Description:修改角色组
 	 * @param roleGroupVo 接收参数的实体对象
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@Override
@@ -99,7 +99,7 @@ public class GemRoleGroupServiceImpl implements GemRoleGroupService {
 	/**
 	 * @Description:查询角色组详情
 	 * @param id 主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@Override
@@ -108,46 +108,41 @@ public class GemRoleGroupServiceImpl implements GemRoleGroupService {
 	}
 
 	/**
-	 * @Description:查询角色组下面的所有角色
-	 * @param name  角色名称
-	 * @author: Ryan  
+	 * @Description:查询角色组以及所有角色（组成tree结构）
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@Override
-	public List<GemRoleGroup> findGroupRoleList(String name) {
+	public List<GemRoleGroup> findGroupRoleList() {
 		Example example = new Example(GemRoleGroup.class);
 		example.createCriteria().andEqualTo("parentId",-1);
 		example.setOrderByClause("group_sort asc");
 		List<GemRoleGroup> listGroup = roleGroupMapper.selectByExample(example);
-		return findGroupChilds(listGroup,name);
+		return findGroupChilds(listGroup);
 	}
-	
+
 	/**
 	 * @Description:递归遍历角色组下面的角色和角色组
 	 * @param listGroup
-	 * @param name
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
-	private List<GemRoleGroup> findGroupChilds(List<GemRoleGroup> listGroup, String name){
+	private List<GemRoleGroup> findGroupChilds(List<GemRoleGroup> listGroup){
 		if(listGroup!=null && listGroup.size()>0) {
 			for (GemRoleGroup roleGroup : listGroup) {
 				Example example = new Example(GemRole.class);
 				Criteria createCriteria = example.createCriteria();
-				createCriteria.andEqualTo("group", roleGroup.getId());
-				if(GemFrameStringUtlis.isNotBlank(name)) {
-					createCriteria.andLike("name","%"+name+"%");
-				}
+				createCriteria.andEqualTo("groupId", roleGroup.getId());
 				example.setOrderByClause("role_sort asc");
 				List<GemRole> selectByExample = roleMapper.selectByExample(example);
 				roleGroup.setRoles(selectByExample);
-				
+
 				Example example2 = new Example(GemRoleGroup.class);
 				example2.createCriteria().andEqualTo("parentId", roleGroup.getId());
 				example2.setOrderByClause("group_sort asc");
 				List<GemRoleGroup> selectByExample2 = roleGroupMapper.selectByExample(example2);
-				roleGroup.setChilds(selectByExample2);
-				findGroupChilds(selectByExample2,name);
+				roleGroup.setChildren(selectByExample2);
+				findGroupChilds(selectByExample2);
 			}
 		}
 		return listGroup;

@@ -15,38 +15,21 @@
 		<result column="phone" property="phone" />
 		<result column="member_id" property="memberId" />
 		<result column="login_time" property="loginTime" />
-		<association property="member" javaType="GemMember">
-            <result column="member_name" property="memberName" />
-		    <result column="sex" property="sex" />
-		    <result column="birthday" property="birthday" />
-		    <result column="national" property="national" />
-		    <result column="address" property="address" />
-		    <result column="states" property="states" />
-		    <result column="descri" property="descri" />
-		    <result column="start_time" property="starTime" />
-   		    <result column="end_time" property="endTime" />
-   		    <result column="phone" property="phone" />
-   		    <result column="card" property="card" />
-   		    <result column="card_type" property="cardType" />
-   		    <result column="work_number" property="workNumber" />
-		    <result column="position" property="position" />
-   		    <result column="company_name" property="companyName" />
-        </association>
 	</resultMap>
 	<select id="findUserList" parameterType="map" resultMap="BaseResultMap">
 	    SELECT * FROM gem_tab_user uer,gem_tab_member member WHERE uer.member_id=member.id
 	</select>
 
     <select id="findUserListByRoleId" parameterType="map" resultType="cn.gemframe.business.domain.GemUser">
-       SELECT 
+       SELECT
            dtu.id id,
            dtu.email email,
            dtu.member_name memberName,
            dtu.user_name userName,
            phone phone
-       FROM 
+       FROM
            gem_tab_user dtu,gem_tab_user_role dtur,gem_tab_role dtr
-       WHERE 
+       WHERE
            dtr.id=dtur.role_id AND dtur.user_id=dtu.id AND dtr.id=#{roleId}
     </select>
 </mapper>

@@ -22,7 +22,6 @@
  */
 package cn.gemframe.business.controller;
 
-import java.util.HashMap;
 import java.util.List;
 
 import cn.gemframe.business.domain.GemPermissions;
@@ -33,8 +32,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cn.gemframe.business.service.GemPermissionsAttributeService;
-import cn.gemframe.business.service.GemPermissionsParameterService;
 import cn.gemframe.business.service.GemPermissionsService;
 
 /**
@@ -49,139 +46,139 @@ public class GemPermissionsController {
 
 	@Autowired
 	private GemPermissionsService permissionsService;
-	@Autowired
-	private GemPermissionsAttributeService permissionsAttributeService;
-    @Autowired
-    private GemPermissionsParameterService permissionsParameterService;
-    
-    
+
 	/**
-	 * @Description: 根据角色获取权限菜单
-	 * @param id 角色主键
-	 * @author: Ryan  
+	 * @Description:添加权限
+	 * @param permissionsVo 权限接受参数实体
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-    @PostMapping("permiss/findPermissByRoleId")
-	public ResponseEntity<ResultData> findPermissByRoleId(Long id) {
-		List<GemPermissions> list = permissionsService.findPermissByRoleId(id);
-		return ResponseEntity.ok(ResultData.SUCCESS(list));
+	@PostMapping("permission/savePermission")
+	public ResponseEntity<ResultData> savePermission(GemPermissionsVo permissionsVo) {
+		Integer returnCount = permissionsService.savePermission(permissionsVo);
+		return ResponseEntity.ok(ResultData.SUCCESS(returnCount));
 	}
 
 	/**
-	 * @Description: 根据角色获取权限按钮
+	 * @Description:删除权限
+	 * @param id 权限主键集合
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	@PostMapping("permission/deletePermissionById")
+	public ResponseEntity<ResultData> deletePermissionById(Long[] id) {
+		Integer returnCount = permissionsService.deletePermissionById(id);
+		return ResponseEntity.ok(ResultData.SUCCESS(returnCount));
+	}
+
+	/**
+	 * @Description:修改权限
+	 * @param permissionsVo 权限接受参数实体
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	@PostMapping("permission/updatePermission")
+	public ResponseEntity<ResultData> updatePermiss(GemPermissionsVo permissionsVo) {
+		Integer returnCount = permissionsService.updatePermission(permissionsVo);
+		return ResponseEntity.ok(ResultData.SUCCESS(returnCount));
+	}
+
+	/**
+	 * @Description:查看权限详情
+	 * @param id 权限主键
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	@PostMapping("permission/findPermissionById")
+	public ResponseEntity<ResultData> findPermissionById(Long id) {
+		GemPermissions permission = permissionsService.findPermissionById(id);
+		return ResponseEntity.ok(ResultData.SUCCESS(permission));
+	}
+
+	/**
+	 * @Description: 根据角色获取权限
 	 * @param id 角色主键
 	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	@PostMapping("permiss/findPermissMunByRoleId")
-	public ResponseEntity<ResultData> findPermissMunByRoleId(Long id) {
-		List<Long> list = permissionsService.findPermissMunByRoleId(id);
-		return ResponseEntity.ok(ResultData.SUCCESS(list));
+    @PostMapping("permission/findPermissionByRoleId")
+	public ResponseEntity<ResultData> findPermissionByRoleId(Long id) {
+		List<GemPermissions> permissionList = permissionsService.findPermissionByRoleId(id);
+		return ResponseEntity.ok(ResultData.SUCCESS(permissionList));
 	}
 
 	/**
-	 * @Description: 根据用户获取菜单
-	 * @param id 用户主键
-	 * @author: Ryan  
-	 * @date 2018年11月5日
-	 */
-	@PostMapping("permiss/findPermissByUserId")
-	public ResponseEntity<ResultData> findPermissByUserId(Long id) {
-		List<GemPermissions> findPermissByUser = permissionsService.findPermissByUserId(id);
-		return ResponseEntity.ok(ResultData.SUCCESS(findPermissByUser));
-	}
-	
-	/**
-	 * @Description: 根据用户获取所有权限（包含参数，属性和子权限）
-	 * @param id 用户主键
-	 * @author: Ryan  
-	 * @date 2018年11月5日
-	 */
-	@PostMapping("permiss/findUserPermiss")
-	public ResponseEntity<ResultData> findUserPermiss(Long id) {
-		List<GemPermissions> findPermissByUser = permissionsService.findUserPermiss(id);
-		return ResponseEntity.ok(ResultData.SUCCESS(findPermissByUser));
-	}
-	
-	/**
-	 * @Description:查看权限详情
-	 * @param id 权限主键
-	 * @author: Ryan  
-	 * @date 2018年11月5日
-	 */
-	@PostMapping("permiss/findPermissById")
-	public ResponseEntity<ResultData> findPermissById(Long id) {
-		GemPermissions permissions = permissionsService.findPermissById(id);
-		return ResponseEntity.ok(ResultData.SUCCESS(permissions));
-	}
-	
-	/**
-	 * @Description:查看菜单下的子权限
-	 * @param id 菜单主键
+	 * @Description: 根据角色获取权限-菜单（包含未选中）
 	 * @param roleId 角色主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	@PostMapping("permiss/findPermissAffiliated")
-	public ResponseEntity<ResultData> findPermissByParentId(Long id,Long roleId) {
-		HashMap<String, Object> hashMap = new HashMap<String,Object>();
-		//获取权限
-		hashMap.put("permiss", permissionsService.findPermissByParentId(id,roleId));
-		//获取属性
-		hashMap.put("attr", permissionsAttributeService.findAttrByPermissId(id,roleId));
-		//获取条件值
-		hashMap.put("param", permissionsParameterService.findParamByPermissId(id,roleId));
-		return ResponseEntity.ok(ResultData.SUCCESS(hashMap));
+	@PostMapping("permission/findPermissionSelectByRoleId")
+	public ResponseEntity<ResultData> findPermissionSelectByRoleId(Long roleId) {
+		List<GemPermissions> permissionList = permissionsService.findPermissionSelectByRoleId(roleId);
+		return ResponseEntity.ok(ResultData.SUCCESS(permissionList));
 	}
-	
+
+	/**
+	 * @Description: 根据角色和菜单获取权限-按钮（包含未选中）
+	 * @param roleId 角色主键
+	 * @param permissionId 权限（菜单）主键
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	@PostMapping("permission/findPermissionSelectByRoleIdAndPermissionId")
+	public ResponseEntity<ResultData> findPermissionSelectByRoleIdAndPermissionId(Long roleId,Long permissionId) {
+		List<GemPermissions> permissionList = permissionsService.findPermissionSelectByRoleIdAndPermissionId(roleId,permissionId);
+		return ResponseEntity.ok(ResultData.SUCCESS(permissionList));
+	}
+
+	/**
+	 * @Description: 根据角色和菜单获取权限-按钮（仅仅包含选中的）
+	 * @param roleId 角色主键
+	 * @param permissionId 权限（菜单）主键
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	@PostMapping("permission/findPermissionOnlySelectByRoleIdAndPermissionId")
+	public ResponseEntity<ResultData> findPermissionOnlySelectByRoleIdAndPermissionId(Long roleId,Long permissionId) {
+		List<GemPermissions> permissionList = permissionsService.findPermissionOnlySelectByRoleIdAndPermissionId(roleId,permissionId);
+		return ResponseEntity.ok(ResultData.SUCCESS(permissionList));
+	}
+
+
+	/**
+	 * @Description: 根据用户获取权限
+	 * @param id 用户主键
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	@PostMapping("permission/findPermissionByUserId")
+	public ResponseEntity<ResultData> findPermissionByUserId(Long id) {
+		List<GemPermissions> permissionList = permissionsService.findPermissionByUserId(id);
+		return ResponseEntity.ok(ResultData.SUCCESS(permissionList));
+	}
+
+	/**
+	 * @Description: 获取系统中的权限-菜单
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	@PostMapping("permission/findPermissionMenu")
+	public ResponseEntity<ResultData> findPermissionMenu() {
+		List<GemPermissions> permissionList = permissionsService.findPermissionMenu();
+		return ResponseEntity.ok(ResultData.SUCCESS(permissionList));
+	}
+
 	/**
 	 * @Description:查看菜单下的按钮
-	 * @param id 菜单主键
-	 * @author: Ryan  
+	 * @param parentId 菜单主键
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	@PostMapping("permiss/findPermissChilds")
-	public ResponseEntity<ResultData> findPermissByParentId(Long id) {
-		List<GemPermissions> findPermissByParentId = permissionsService.findPermissByParentId(id,null);
-		return ResponseEntity.ok(ResultData.SUCCESS(findPermissByParentId));
+	@PostMapping("permission/findPermissionButtonByParentId")
+	public ResponseEntity<ResultData> findPermissionByParentId(Long parentId) {
+		List<GemPermissions> permissionList = permissionsService.findPermissionButtonByParentId(parentId);
+		return ResponseEntity.ok(ResultData.SUCCESS(permissionList));
 	}
-	
-	/**
-	 * @Description:修改权限
-	 * @param permissionsVo 权限接受参数实体
-	 * @author: Ryan  
-	 * @date 2018年11月5日
-	 */
-	@PostMapping("permiss/updatePermiss")
-	public ResponseEntity<ResultData> updatePermiss(GemPermissionsVo permissionsVo) {
-		Integer permissions = permissionsService.updatePermiss(permissionsVo);
-		return ResponseEntity.ok(ResultData.SUCCESS(permissions));
-	}
-	
-	/**
-	 * @Description:添加权限
-	 * @param permissionsVo 权限接受参数实体
-	 * @author: Ryan  
-	 * @date 2018年11月5日
-	 */
-	@PostMapping("permiss/savePermiss")
-	public ResponseEntity<ResultData> savePermiss(GemPermissionsVo permissionsVo) {
-		Integer permissions = permissionsService.savePermiss(permissionsVo);
-		return ResponseEntity.ok(ResultData.SUCCESS(permissions));
-	}
-	
-	/**
-	 * @Description:删除权限
-	 * @param id 权限主键集合
-	 * @author: Ryan  
-	 * @date 2018年11月5日
-	 */
-	@PostMapping("permiss/deletePermissById")
-	public ResponseEntity<ResultData> deletePermissById(Long[] id) {
-		Integer permissions = permissionsService.deletePermissById(id);
-		return ResponseEntity.ok(ResultData.SUCCESS(permissions));
-	}
-	
-	
-	
+
 }

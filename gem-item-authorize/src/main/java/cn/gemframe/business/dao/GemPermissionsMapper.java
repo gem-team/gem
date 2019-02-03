@@ -37,10 +37,10 @@ import cn.gemframe.config.mapper.GemFrameMapper;
  */
 public interface GemPermissionsMapper extends GemFrameMapper<GemPermissions> {
 
-	List<Long> findPermissByRole(Map<String, Object> hashMap);
+	List<GemPermissions> findPermissionByRole(Map<String, Object> hashMap);
 
-	List<Long> findPermissMunByRole(Map<String, Object> hashMap);
+	List<GemPermissions> findPermissionButtonByRoleIdAndPermissionId(Map<String, Object> hashMap);
 
-	List<Long> findPermissByUser(Map<String, Object> hashMap);
+	List<GemPermissions> findPermissionByUser(Map<String, Object> hashMap);
 
 }

@@ -30,6 +30,7 @@ import java.util.Map;
 import cn.gemframe.business.dao.GemUserMapper;
 import cn.gemframe.business.dao.GemUserRoleMapper;
 import cn.gemframe.business.domain.GemUser;
+import cn.gemframe.business.service.GemUserRoleService;
 import cn.gemframe.business.vo.GemUserRoleVo;
 import cn.gemframe.business.vo.GemUserVo;
 import cn.gemframe.config.constant.GemFrameConstant;
@@ -62,6 +63,8 @@ public class GemUserServiceImpl implements GemUserService {
 	private GemUserMapper userMapper;
 	@Autowired
 	private GemUserRoleMapper userRoleMapper;
+	@Autowired
+	private GemUserRoleService userRoleService;
 
 	/**
 	 * @Description: 添加用户
@@ -78,13 +81,13 @@ public class GemUserServiceImpl implements GemUserService {
 		Long userId = GemFrameIdUtlis.Id();
 		user.setId(userId);
 		user.setPassWord(passWord);
-		String[] roles = uservo.getRoles();
+		Long[] roles = uservo.getRoleIds();
 		if(roles!=null && roles.length>0) {
-			for (String roleId : roles) {
+			for (Long roleId : roles) {
 				GemUserRoleVo gemUserRoleVo = new GemUserRoleVo();
 				gemUserRoleVo.setId(GemFrameIdUtlis.Id());
 				gemUserRoleVo.setUserId(userId);
-				gemUserRoleVo.setRoleId(new Long(roleId));
+				gemUserRoleVo.setRoleId(roleId);
 				userRoleMapper.insert(gemUserRoleVo);
 			}
 		}
@@ -160,9 +163,13 @@ public class GemUserServiceImpl implements GemUserService {
 	 */
 	@Override
 	public Integer updateUser(GemUserVo userVo) {
+		//修改用户实体表内容
 		userVo.setUpdateDate(new Date());
 		GemUser user = GemFrameJsonUtils.classToClass(userVo, GemUser.class);
-		return userMapper.updateByPrimaryKeySelective(user);
+		Integer returnCount = userMapper.updateByPrimaryKeySelective(user);
+		//维护用户和角色的关系
+		userRoleService.updateUserToRole(userVo.getId(),userVo.getRoleIds());
+		return returnCount;
 	}
 
 	/**

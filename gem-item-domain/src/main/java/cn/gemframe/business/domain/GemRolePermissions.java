@@ -38,12 +38,12 @@ import javax.persistence.Table;
  */
 @Data
 @Entity
-@Table(name="gem_tab_role_permis")
+@Table(name="gem_tab_role_permissions")
 @EqualsAndHashCode(callSuper = true)
 public class GemRolePermissions extends BaseBean {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private @Column(name="role_id",cause="角色主键",columnDefinition = "bigint(20) COMMENT '角色主键'") Long roleId;
 	private @Column(name="per_id",cause="权限主键",	columnDefinition = "bigint(20) COMMENT '权限主键'") Long permisId;
 }

@@ -22,11 +22,12 @@
  */
 package cn.gemframe.business.dao;
 
-import cn.gemframe.business.domain.GemBrowseLogs;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
+
+import cn.gemframe.business.domain.GemBrowseLogs;
 
 /**
  * @Title:

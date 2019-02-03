@@ -27,8 +27,6 @@ import java.util.Date;
 import java.util.List;
 
 import cn.gemframe.business.domain.GemOrganization;
-import cn.gemframe.business.domain.GemOrganizationChange;
-import cn.gemframe.business.vo.GemOrganizationChangeVo;
 import cn.gemframe.business.vo.GemOrganizationVo;
 import cn.gemframe.config.utils.GemFrameIdUtlis;
 import cn.gemframe.config.utils.GemFrameJsonUtils;
@@ -96,10 +94,8 @@ public class GemOrganizationServiceImpl implements GemOrganizationService {
 	 * @date 2018年11月6日
 	 */
 	@Override
-	public Integer updateOrgan(GemOrganizationVo organizationVo, GemOrganizationChangeVo organizationChangeVo, MultipartFile file) {
+	public Integer updateOrgan(GemOrganizationVo organizationVo,  MultipartFile file) {
 		GemOrganization organization = GemFrameJsonUtils.classToClass(organizationVo, GemOrganization.class);
-		GemOrganizationChange organizationChange = GemFrameJsonUtils.classToClass(organizationChangeVo, GemOrganizationChange.class);
-		organizationChange.setId(GemFrameIdUtlis.Id());
 		return organizationMapper.updateByPrimaryKeySelective(organization);
 	}
 
@@ -208,19 +204,6 @@ public class GemOrganizationServiceImpl implements GemOrganizationService {
 			}
 		}
 		return listOrganization;
-	}
-
-
-	/**
-	 * @Description:部门简介
-	 * @param id 部门主键
-	 * @author: Ryan
-	 * @date 2018年11月22日
-	 */
-	@Override
-	public String findOrganIntroduction(Long id) {
-		GemOrganization selectByPrimaryKey = organizationMapper.selectByPrimaryKey(id);
-		return selectByPrimaryKey.getIntroductions();
 	}
 
 }

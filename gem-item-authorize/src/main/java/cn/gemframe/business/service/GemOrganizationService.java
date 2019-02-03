@@ -25,8 +25,6 @@ package cn.gemframe.business.service;
 import java.util.List;
 
 import cn.gemframe.business.domain.GemOrganization;
-import cn.gemframe.business.domain.GemOrganizationChange;
-import cn.gemframe.business.vo.GemOrganizationChangeVo;
 import cn.gemframe.business.vo.GemOrganizationVo;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -62,7 +60,7 @@ public interface GemOrganizationService {
 	 * @author: Ryan
 	 * @date 2018年11月6日
 	 */
-	Integer updateOrgan(GemOrganizationVo organizationVo, GemOrganizationChangeVo organizationChangeVo, MultipartFile file);
+	Integer updateOrgan(GemOrganizationVo organizationVo, MultipartFile file);
 
 	/**
 	 * @Description:查询组织机构详情
@@ -81,13 +79,5 @@ public interface GemOrganizationService {
 	 */
 	List<GemOrganization> findOrganZtree(String name, String time);
 
-
-	/**
-	 * @Description:部门简介
-	 * @param id 部门主键
-	 * @author: Ryan
-	 * @date 2018年11月22日
-	 */
-	String findOrganIntroduction(Long id);
 
 }

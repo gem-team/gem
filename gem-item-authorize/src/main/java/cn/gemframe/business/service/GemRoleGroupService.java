@@ -39,7 +39,7 @@ public interface GemRoleGroupService {
 	/**
 	 * @Description:添加角色组
 	 * @param roleGroupVo 接收参数的实体对象
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	Integer saveRoleGroup(GemRoleGroupVo roleGroupVo);
@@ -47,15 +47,15 @@ public interface GemRoleGroupService {
 	/**
 	 * @Description:删除角色组
 	 * @param id 主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
-	Integer deletRoleGroup(Long id);
+	Integer deleteRoleGroup(Long id);
 
 	/**
 	 * @Description:修改角色组
 	 * @param roleGroupVo 接收参数的实体对象
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	Integer updateRoleGroup(GemRoleGroupVo roleGroupVo);
@@ -63,17 +63,16 @@ public interface GemRoleGroupService {
 	/**
 	 * @Description:查询角色组详情
 	 * @param id 主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	GemRoleGroup findRoleGroupById(Long id);
 
 	/**
-	 * @Description:查询角色组下面的所有角色
-	 * @param name  角色名称
-	 * @author: Ryan  
+	 * @Description:查询角色组以及所有角色（组成tree结构）
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
-	List<GemRoleGroup> findGroupRoleList(String name);
+	List<GemRoleGroup> findGroupRoleList();
 
 }

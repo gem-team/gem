@@ -42,11 +42,9 @@ import java.util.Date;
 @Table(name="gem_tab_user_role")
 @EqualsAndHashCode(callSuper = true)
 public class GemUserRole extends BaseBean {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private @Column(name="user_id",cause="用户主键",	 columnDefinition = "bigint(20) COMMENT '用户主键'") Long userId;
 	private @Column(name="role_id",cause="角色主键",	 columnDefinition = "bigint(20) COMMENT '角色主键'") Long roleId;
-	private @Column(name="valid_time",cause="生效时间",	 columnDefinition = "datetime COMMENT '生效时间'") Date validTime;
-	private @Column(name="failure_time",cause="失效时间",columnDefinition = "datetime COMMENT '失效时间'") Date failureTime;
 }

@@ -32,6 +32,8 @@ import cn.gemframe.business.service.GemUserRoleService;
 
 import tk.mybatis.mapper.entity.Example;
 
+import java.util.Date;
+
 /**
  * @Title:业务实现
  * @Description:用户角色管理
@@ -48,7 +50,7 @@ public class GemUserRoleServiceImpl implements GemUserRoleService {
 	/**
 	 * @Description:根据角色删除关联关系
 	 * @param id 角色主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@Override
@@ -61,7 +63,7 @@ public class GemUserRoleServiceImpl implements GemUserRoleService {
 	/**
 	 * @Description:根据用户删除关联关系
 	 * @param id 用户主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@Override
@@ -74,13 +76,37 @@ public class GemUserRoleServiceImpl implements GemUserRoleService {
 	/**
 	 * @Description: 添加用户和角色的关联关系
 	 * @param userRole 角色和用户中间表的实体
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@Override
 	public Integer saveUserAndRole(GemUserRole userRole) {
 		userRole.setId(GemFrameIdUtlis.Id());
+		userRole.setCreateDate(new Date());
+		userRole.setUpdateDate(new Date());
 		return userRoleMapper.insert(userRole);
+	}
+
+	/**
+	 * 跟新用户对应的角色关系
+	 * @param userId
+	 * @param roleIds
+	 * @return
+	 */
+	@Override
+	public Integer updateUserToRole(Long userId,Long[] roleIds){
+		//1.删除用户对应的角色关系
+		Integer returnCount = deleteRoleByUserId(userId);
+		//2.添加用户对应的角色关系
+		if(roleIds!=null && roleIds.length>0) {
+			for (Long roleId : roleIds) {
+				GemUserRole userRole = new GemUserRole();
+				userRole.setUserId(userId);
+				userRole.setRoleId(roleId);
+				saveUserAndRole(userRole);
+			}
+		}
+		return returnCount;
 	}
 
 }

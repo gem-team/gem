@@ -25,13 +25,10 @@ package cn.gemframe.business.service.impl;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Map;
 
-import cn.gemframe.business.constant.AuthsConstant;
 import cn.gemframe.business.domain.GemPermissions;
-import cn.gemframe.business.domain.GemPermissionsAttribute;
-import cn.gemframe.business.domain.GemRole;
-import cn.gemframe.business.domain.GemRolePermissionsParameter;
 import cn.gemframe.business.vo.GemPermissionsVo;
 import cn.gemframe.config.exception.GemFrameException;
 import cn.gemframe.config.exception.status.GemFrameErrorStatus;
@@ -41,14 +38,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.gemframe.business.dao.GemPermissionsMapper;
-import cn.gemframe.business.service.GemPermissionsAttributeService;
-import cn.gemframe.business.service.GemPermissionsParameterService;
 import cn.gemframe.business.service.GemPermissionsService;
 import cn.gemframe.business.service.GemRolePermissionsService;
 import cn.gemframe.business.service.GemRoleService;
-
 import tk.mybatis.mapper.entity.Example;
-import tk.mybatis.mapper.entity.Example.Criteria;
+
 
 /**
  * @Title:业务实现
@@ -66,94 +60,15 @@ public class GemPermissionsServiceImpl implements GemPermissionsService {
 	private GemRolePermissionsService rolePermissionsService;
 	@Autowired
 	private GemRoleService roleService;
-	@Autowired
-	private GemPermissionsAttributeService permissionsAttributeService;
-	@Autowired
-	private GemPermissionsParameterService permissionsParameterService;
-
-	/**
-	 * @Description: 根据角色获取权限菜单
-	 * @param id 角色主键
-	 * @author: Ryan  
-	 * @date 2018年11月5日
-	 */
-	@Override
-	public List<GemPermissions> findPermissByRoleId(Long id) {
-		List<Long> ids=null;
-		if(id!=null) {
-			Map<String, Object> hashMap = new HashMap<String,Object>();
-			hashMap.put("id", id);
-			ids=permissionsMapper.findPermissByRole(hashMap);
-		}else {
-			return null;
-		}
-		return findAllMenu(ids, AuthsConstant.MENU_ONESELF);
-	}
-
-	/**
-	 * @Description: 根据角色获取权限按钮
-	 * @param id 角色主键
-	 * @author: Ryan
-	 * @date 2018年11月5日
-	 */
-	@Override
-	public List<Long> findPermissMunByRoleId(Long id) {
-		Map<String, Object> hashMap = new HashMap<String,Object>();
-		hashMap.put("id", id);
-		return permissionsMapper.findPermissMunByRole(hashMap);
-	}
-
-	/**
-	 * @Description: 根据用户获取权限菜单
-	 * @param id 用户主键
-	 * @author: Ryan  
-	 * @date 2018年11月5日
-	 */
-	@Override
-	public List<GemPermissions> findPermissByUserId(Long id) {
-		List<Long> ids=null;
-		if(id!=null) {
-			Map<String, Object> hashMap = new HashMap<String,Object>();
-			hashMap.put("id", id);
-			ids=permissionsMapper.findPermissByUser(hashMap);
-		}else {
-			return null;
-		}
-		return findAllMenu(ids,AuthsConstant.MENU_ONESELF);
-	}
-
-	/**
-	 * @Description:查看权限详情
-	 * @param id 权限主键
-	 * @author: Ryan  
-	 * @date 2018年11月5日
-	 */
-	@Override
-	public GemPermissions findPermissById(Long id) {
-		return permissionsMapper.selectByPrimaryKey(id);
-	}
-
-	/**
-	 * @Description:修改权限
-	 * @param permissionsVo 权限接受参数实体
-	 * @author: Ryan  
-	 * @date 2018年11月5日
-	 */
-	@Override
-	public Integer updatePermiss(GemPermissionsVo permissionsVo) {
-		permissionsVo.setUpdateDate(new Date());
-		GemPermissions permissions = GemFrameJsonUtils.classToClass(permissionsVo, GemPermissions.class);
-		return permissionsMapper.updateByPrimaryKeySelective(permissions);
-	}
 
 	/**
 	 * @Description:添加权限
 	 * @param permissionsVo 权限接受参数实体
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@Override
-	public Integer savePermiss(GemPermissionsVo permissionsVo) {
+	public Integer savePermission(GemPermissionsVo permissionsVo) {
 		permissionsVo.setCreateDate(new Date());
 		permissionsVo.setUpdateDate(new Date());
 		GemPermissions permissions = GemFrameJsonUtils.classToClass(permissionsVo, GemPermissions.class);
@@ -164,11 +79,11 @@ public class GemPermissionsServiceImpl implements GemPermissionsService {
 	/**
 	 * @Description:删除权限
 	 * @param id 权限主键集合
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@Override
-	public Integer deletePermissById(Long[] id) {
+	public Integer deletePermissionById(Long[] id) {
 		if(id!=null && id.length>0) {
 			for (Long pid : id) {
 				rolePermissionsService.deleteByPermissId(pid);
@@ -179,161 +94,228 @@ public class GemPermissionsServiceImpl implements GemPermissionsService {
 		}
 		return null;
 	}
-	
-	
+
 	/**
-	 * @Description:查看菜单下的子权限
-	 * @param id 菜单主键
-	 * @param roleId 角色主键
-	 * @author: Ryan  
+	 * @Description:修改权限
+	 * @param permissionsVo 权限接受参数实体
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@Override
-	public List<GemPermissions> findPermissByParentId(Long id, Long roleId) {
-		List<Long> ids=null;
-		if(roleId!=null) {
+	public Integer updatePermission(GemPermissionsVo permissionsVo) {
+		permissionsVo.setUpdateDate(new Date());
+		GemPermissions permissions = GemFrameJsonUtils.classToClass(permissionsVo, GemPermissions.class);
+		return permissionsMapper.updateByPrimaryKeySelective(permissions);
+	}
+
+	/**
+	 * @Description:查看权限详情
+	 * @param id 权限主键
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	@Override
+	public GemPermissions findPermissionById(Long id) {
+		return permissionsMapper.selectByPrimaryKey(id);
+	}
+
+	/**
+	 * @Description: 根据角色获取权限
+	 * @param roleId 角色主键
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	@Override
+	public List<GemPermissions> findPermissionByRoleId(Long roleId) {
+		List<GemPermissions> permissionTree = new ArrayList<GemPermissions>();
+		if(roleId != null){
 			Map<String, Object> hashMap = new HashMap<String,Object>();
-			hashMap.put("id", roleId);
-			ids=permissionsMapper.findPermissByRole(hashMap);
+			hashMap.put("roleId", roleId);
+			List<GemPermissions> permissions = permissionsMapper.findPermissionByRole(hashMap);
+			//list to tree
+			permissionTree = permissionListToTree(permissions);
 		}
-		Example example = new Example(GemPermissions.class);
-		Criteria createCriteria = example.createCriteria();
-		createCriteria.andEqualTo("parentId",id);
-		createCriteria.andEqualTo("menusType","1");
-		List<GemPermissions> selectByExample = permissionsMapper.selectByExample(example);
-		if(selectByExample!=null && selectByExample.size()>0 && ids!=null && ids.size()>0) {
-			for (GemPermissions permissions : selectByExample) {
-				Long id2 = permissions.getId();
-				if(ids.contains(id2)) {
-					permissions.setSelected(true);
+		return permissionTree;
+	}
+	/**
+	 * @Description: 根据角色获取权限（包含未选中）
+	 * @param roleId 角色主键
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	@Override
+	public List<GemPermissions> findPermissionSelectByRoleId(Long roleId) {
+		List<GemPermissions> permissionTree = new ArrayList<GemPermissions>();
+		if(roleId != null){
+			//获取全部的菜单数据
+			List<GemPermissions> permissionAll = findPermissionMenu(0);
+			Map<Long,GemPermissions> permissionsMap = new HashMap<Long,GemPermissions>();
+			for (int i = 0; i < permissionAll.size() ; i++) {
+				permissionsMap.put(permissionAll.get(i).getId(),permissionAll.get(i));
+			}
+			//获取角色对应的权限
+			Map<String, Object> hashMap = new HashMap<String,Object>();
+			hashMap.put("roleId", roleId);
+			List<GemPermissions> permissionRole = permissionsMapper.findPermissionByRole(hashMap);
+			//将选中的权限，赋值到全部菜单数据中
+			for (int i = 0 ; i < permissionAll.size() ; i++){
+				for (int j = 0 ; j < permissionRole.size() ; j++){
+					if(permissionAll.get(i).getId().equals(permissionRole.get(j).getId())){
+						permissionAll.get(i).setSelected(true);
+						continue;
+					}
 				}
 			}
+			//list to tree
+			permissionTree = permissionListToTree(permissionAll);
 		}
+		return permissionTree;
+	}
+	/**
+	 * @Description: 根据角色和菜单获取权限-按钮（包含未选中）
+	 * @param roleId 角色主键
+	 * @param permissionId 权限（菜单）主键
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	@Override
+	public List<GemPermissions> findPermissionSelectByRoleIdAndPermissionId(Long roleId,Long permissionId) {
+		List<GemPermissions> permissionButtonListByPermissionId = new ArrayList<GemPermissions>();
+		if(roleId != null){
+			//根据菜单获取对应的按钮
+			Example example = new Example(GemPermissions.class);
+			Example.Criteria createCriteria = example.createCriteria();
+			createCriteria.andEqualTo("menusType",1);
+			createCriteria.andEqualTo("parentId",permissionId);
+			permissionButtonListByPermissionId = permissionsMapper.selectByExample(example);
+			//根据菜单和角色获取对应的按钮
+			Map<String, Object> hashMap = new HashMap<String,Object>();
+			hashMap.put("roleId", roleId);
+			hashMap.put("permissionId", permissionId);
+			List<GemPermissions> permissionButtonListByRoleIdAndPermissionId = permissionsMapper.findPermissionButtonByRoleIdAndPermissionId(hashMap);
+			for (int i = 0 ; i < permissionButtonListByPermissionId.size() ; i++){
+				for (int j = 0 ; j < permissionButtonListByRoleIdAndPermissionId.size() ; j++){
+					if(permissionButtonListByPermissionId.get(i).getId().equals(permissionButtonListByRoleIdAndPermissionId.get(j).getId())){
+						permissionButtonListByPermissionId.get(i).setSelected(true);
+						continue;
+					}
+				}
+			}
+		}else{
+			return null;
+		}
+		return permissionButtonListByPermissionId;
+	}
+	/**
+	 * @Description: 根据角色和菜单获取权限-按钮（仅仅包含选中的）
+	 * @param roleId 角色主键
+	 * @param permissionId 权限（菜单）主键
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	@Override
+	public List<GemPermissions> findPermissionOnlySelectByRoleIdAndPermissionId(Long roleId,Long permissionId) {
+		List<GemPermissions> permissionNumListByRoleIdAndPermissionId = new ArrayList<GemPermissions>();
+		if(roleId != null){
+			//根据菜单和角色获取对应的按钮
+			Map<String, Object> hashMap = new HashMap<String,Object>();
+			hashMap.put("roleId", roleId);
+			hashMap.put("permissionId", permissionId);
+			permissionNumListByRoleIdAndPermissionId = permissionsMapper.findPermissionButtonByRoleIdAndPermissionId(hashMap);
+		}else{
+			return null;
+		}
+		return permissionNumListByRoleIdAndPermissionId;
+	}
+
+	/**
+	 * @Description: 根据用户获取权限
+	 * @param userId 用户主键
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	@Override
+	public List<GemPermissions> findPermissionByUserId(Long userId) {
+		List<GemPermissions> permissionTree = new ArrayList<GemPermissions>();
+		if(userId != null){
+			Map<String, Object> hashMap = new HashMap<String,Object>();
+			hashMap.put("userId", userId);
+			List<GemPermissions> permissions = permissionsMapper.findPermissionByUser(hashMap);
+			//list to tree
+			permissionTree = permissionListToTree(permissions);
+		}
+		return permissionTree;
+	}
+
+	/**
+	 * @Description: 获取系统中的权限-菜单
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	@Override
+	public List<GemPermissions> findPermissionMenu() {
+		//获取全部的菜单数据
+		List<GemPermissions> permissionAll = findPermissionMenu(0);
+		List<GemPermissions> permissionTree = permissionListToTree(permissionAll);
+		return permissionTree;
+	}
+
+	/**
+	 * @Description: 查看菜单下的按钮
+	 * @param parentId 菜单主键
+	 * @author: Ryan
+	 * @date 2018年11月5日
+	 */
+	@Override
+	public List<GemPermissions> findPermissionButtonByParentId(Long parentId) {
+		Example example = new Example(GemPermissions.class);
+		Example.Criteria createCriteria = example.createCriteria();
+		createCriteria.andEqualTo("parentId",parentId);
+		createCriteria.andEqualTo("menusType",1);
+		List<GemPermissions> selectByExample = permissionsMapper.selectByExample(example);
 		return selectByExample;
 	}
 
 	/**
-	 * @Description: 查询所有权限菜单
-	 * @param ids 权限主键集合
-	 * @param type 0查询拥有的权限，不拥有的不显示 ，1查询所有，字段标识是否拥有
-	 * @author: Ryan  
+	 * @Description: 获取权限数据
+	 * @param menusType 菜单0为菜单1按钮
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	@Override
-	public List<GemPermissions> findAllMenu(List<Long> ids, String type) {
+	private List<GemPermissions> findPermissionMenu(Integer menusType) {
 		Example example = new Example(GemPermissions.class);
-		Criteria createCriteria = example.createCriteria();
-		createCriteria.andEqualTo("parentId",-1);
-		createCriteria.andEqualTo("menusType",0);
+		Example.Criteria createCriteria = example.createCriteria();
+		createCriteria.andEqualTo("menusType",menusType);
 		List<GemPermissions> selectByExample = permissionsMapper.selectByExample(example);
-		if(selectByExample!=null && selectByExample.size()>0) {
-			for (GemPermissions permissions : selectByExample) {
-				Long id = permissions.getId();
-				if(ids!=null && ids.size()>0) {
-					if(ids.contains(id)) {
-						permissions.setSelected(true);
-					}
-				}
-			}
-		}
-		return getChildsPermiss(selectByExample,ids,type);
-	}
-	
-	/**
-	 * @Description: 递归查询所有的权限列表
-	 * @param listPermiss 所有的权限集合
-	 * @param ids 用户拥有的权限主键集合
-	 * @param type 0查询拥有的权限，不拥有的不显示 ，1查询所有，字段标识是否拥有
-	 * @author: Ryan  
-	 * @date 2018年11月5日
-	 */
-	public List<GemPermissions> getChildsPermiss(List<GemPermissions> listPermiss, List<Long> ids, String type) {
-		int levelsNUmber=3;
-		if(listPermiss!=null && listPermiss.size()>0) {
-			for (GemPermissions permissions : listPermiss) {
-				Example example = new Example(GemPermissions.class);
-				Criteria createCriteria = example.createCriteria();
-				createCriteria.andEqualTo("parentId",permissions.getId());
-				createCriteria.andEqualTo("menusType",0);
-				Integer levels = permissions.getLevels();
-				if(levels!=null && levels<levelsNUmber) {
-					List<GemPermissions> selectByExample = permissionsMapper.selectByExample(example);
-					if(selectByExample!=null && selectByExample.size()>0) {
-						for (GemPermissions pers : selectByExample) {
-							Long id = pers.getId();
-							if(ids!=null && ids.size()>0) {
-								if(ids.contains(id)){
-									pers.setSelected(true);
-								}
-							}
-						}
-					}
-					if(selectByExample!=null && selectByExample.size()>0) {
-						permissions.setChilds(selectByExample);
-					}
-					getChildsPermiss(selectByExample,ids,type);
-				}
-			}
-		}
-		return listPermiss;
+		return selectByExample;
 	}
 
+
 	/**
-	 * @Description: 根据用户获取所有权限（包含参数，属性和子权限）
-	 * @param id 用户主键
-	 * @author: Ryan  
-	 * @date 2018年11月5日
+	 * 将list格式是权限数据，转化成tree格式的权限数据。
+	 * @param permissions
+	 * @return
 	 */
-	@Override
-	public List<GemPermissions> findUserPermiss(Long id) {
-		if(id==null) {
-			return null;
-		}
-		Map<String, Object> hashMap = new HashMap<String,Object>();
-		hashMap.put("id", id);
-		List<Long> permissIds = permissionsMapper.findPermissByUser(hashMap);
-		List<Long> roleIds = roleService.findRoleIdsByUser(id);
-		Example example = new Example(GemPermissions.class);
-		Criteria createCriteria = example.createCriteria();
-		createCriteria.andEqualTo("parentId",-1);
-		List<GemPermissions> listPermissions = permissionsMapper.selectByExample(example);
-		return findUserAllPermiss(listPermissions,roleIds,permissIds);
-	}
-	
-	public  List<GemPermissions> findUserAllPermiss(List<GemPermissions> listPermissions, List<Long> roles, List<Long> permissIds){
-		if(listPermissions!=null && listPermissions.size()>0) {
-			for (GemPermissions permissions : listPermissions) {
-				Long id = permissions.getId();
-				if(permissIds!=null && permissIds.size()>0) {
-					if(permissIds.contains(id)) {
-						permissions.setSelected(true);
+	private List<GemPermissions> permissionListToTree(List<GemPermissions> permissions){
+		List<GemPermissions> permissionTree = new ArrayList<GemPermissions>();
+		//list to tree
+		for (GemPermissions t1 : permissions) {
+			if(t1.getParentId() == -1L){
+				permissionTree.add(t1);
+			}
+			for (GemPermissions t2 : permissions) {
+				if(t2.getParentId().equals(t1.getId())){
+					if(t1.getChildren() == null){
+						List<GemPermissions> myChildrens = new ArrayList<GemPermissions>();
+						myChildrens.add(t2);
+						t1.setChildren(myChildrens);
+					}else{
+						t1.getChildren().add(t2);
 					}
 				}
-				Example example = new Example(GemPermissions.class);
-				Criteria createCriteria = example.createCriteria();
-				createCriteria.andEqualTo("parentId",permissions.getId());
-				List<GemPermissions> selectByExample = permissionsMapper.selectByExample(example);
-				if(selectByExample!=null && selectByExample.size()>0) {
-					for (GemPermissions permissionsChild : selectByExample) {
-						Long idChild = permissionsChild.getId();
-						if(permissIds!=null && permissIds.size()>0) {
-							if(permissIds.contains(idChild)) {
-								permissionsChild.setSelected(true);
-							}
-						}
-					}
-				}
-				if(selectByExample!=null && selectByExample.size()>0) {
-					permissions.setChilds(selectByExample);
-				}
-				List<GemPermissionsAttribute> findAttrByPermissId = permissionsAttributeService.findAttrByPermissId(permissions.getId(),roles);
-				permissions.setAttrs(findAttrByPermissId);
-				List<GemRolePermissionsParameter> findParamByPermissIds = permissionsParameterService.findParamByPermissIds(permissions.getId(), roles);
-				permissions.setParams(findParamByPermissIds);
-				findUserAllPermiss(permissions.getChilds(),roles,permissIds);
 			}
 		}
-		return listPermissions;
+		return permissionTree;
 	}
 
 }

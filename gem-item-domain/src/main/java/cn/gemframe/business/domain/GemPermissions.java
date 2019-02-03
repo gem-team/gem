@@ -43,21 +43,18 @@ import java.util.List;
 @Table(name="gem_tab_permissions")
 @EqualsAndHashCode(callSuper = true)
 public class GemPermissions extends BaseBean {
-	
+
 	private static final long serialVersionUID = 1L;
-	
-	private @Column(name="per_name",cause="权限名字",		columnDefinition = "varchar(255) COMMENT '权限名字'") String name;
-	private @Column(name="per_path",cause="资源路径",		columnDefinition = "varchar(255) COMMENT '资源路径'") String path;
-	private @Column(name="per_icon",cause="图标",			columnDefinition = "varchar(255) COMMENT '图标'") String icon;
-	private @Column(name="per_code",cause="权限编码",		columnDefinition = "varchar(255) COMMENT '权限编码'") String code;
-	private @Column(name="per_cause",cause="权限描述",		columnDefinition = "varchar(255) COMMENT '权限描述'") String cause;
-	private @Column(name="per_parent",cause="权限的父级",	columnDefinition = "bigint(20) COMMENT '权限的父级'") Long parentId;
-	private @Column(name="per_level",cause="权限的级别",	columnDefinition = "int(11) COMMENT '权限的级别'") Integer levels;
-	private @Column(name="per_status",cause="权限的状态",	columnDefinition = "int(11) COMMENT '权限的状态'") Integer status;
-	private @Column(name="per_menus_type",cause="是否是菜单0为菜单1权限",columnDefinition = "int(11) COMMENT '是否是菜单0为菜单1权限'") Integer menusType;
-	
-	private @Transient(cause="权限子集") List<GemPermissions> childs;
+
+	private @Column(name="per_parentId",cause="权限的父级",	columnDefinition = "bigint(20) COMMENT '权限的父级'") 	Long parentId;
+	private @Column(name="per_name",	cause="权限名字",	columnDefinition = "varchar(255) COMMENT '权限名字'") 	String name;
+	private @Column(name="per_path",	cause="资源路径",	columnDefinition = "varchar(255) COMMENT '资源路径'") 	String path;
+	private @Column(name="per_icon",	cause="图标",		columnDefinition = "varchar(255) COMMENT '图标'")		String icon;
+	private @Column(name="per_code",	cause="权限编码",	columnDefinition = "varchar(255) COMMENT '权限编码'")	String code;
+	private @Column(name="per_level",	cause="权限的级别",	columnDefinition = "int(11) COMMENT '权限的级别'") 		Integer levels;
+	private @Column(name="per_menus_type",cause="是否是菜单0为菜单1按钮",columnDefinition = "int(11) COMMENT '是否是菜单0为菜单1按钮'") Integer menusType;
+	private @Column(name="per_cause",	cause="权限描述",	columnDefinition = "varchar(255) COMMENT '权限描述'") 	String cause;
+
+	private @Transient(cause="权限子集") List<GemPermissions> children;
 	private @Transient(cause="是否选中") boolean selected;
-	private @Transient(cause="属性") List<GemPermissionsAttribute> attrs;
-	private @Transient(cause="参数") List<GemRolePermissionsParameter> params;
 }

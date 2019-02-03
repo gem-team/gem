@@ -22,14 +22,10 @@
  */
 package cn.gemframe.business.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import cn.gemframe.business.domain.GemOrganization;
-import cn.gemframe.business.domain.GemOrganizationChange;
 import cn.gemframe.business.service.GemOrganizationService;
-import cn.gemframe.business.vo.GemOrganizationChangeVo;
 import cn.gemframe.business.vo.GemOrganizationVo;
 import cn.gemframe.config.response.ResultData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,8 +80,8 @@ public class GemOrganizationController {
 	 * @date 2018年11月6日
 	 */
 	@PostMapping("organ/updateOrgan")
-	public ResponseEntity<ResultData> updateOrgan(GemOrganizationVo organizationVo, GemOrganizationChangeVo organizationChangeVo, MultipartFile file){
-		Integer flag=organizationService.updateOrgan(organizationVo,organizationChangeVo,file);
+	public ResponseEntity<ResultData> updateOrgan(GemOrganizationVo organizationVo, MultipartFile file){
+		Integer flag=organizationService.updateOrgan(organizationVo,file);
 		return ResponseEntity.ok(ResultData.SUCCESS(flag));
 	}
 

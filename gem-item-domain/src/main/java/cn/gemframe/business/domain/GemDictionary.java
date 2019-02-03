@@ -43,19 +43,18 @@ import java.util.List;
 @Table(name="gem_tab_dictionary")
 @EqualsAndHashCode(callSuper = true)
 public class GemDictionary extends BaseBean {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
+	private @Column(name="dic_parentId",cause="父级",	columnDefinition = "bigint(20) COMMENT '父级'") Long parentId;
 	private @Column(name="dic_name",cause="名字",	columnDefinition = "varchar(255) COMMENT '名字'") String name;
 	private @Column(name="dic_code",cause="编码",	columnDefinition = "varchar(255) COMMENT '编码'") String code;
-	private @Column(name="dic_status",cause="状态",	columnDefinition = "int(11) COMMENT '状态'") int status;
-	private @Column(name="dic_cause",cause="备注",	columnDefinition = "varchar(255) COMMENT '备注'") String cause;
-	private @Column(name="dic_value",cause="值",	columnDefinition = "varchar(255) COMMENT '值'") String dicValue;
-	private @Column(name="dic_sort",cause="排序号",	columnDefinition = "int(11) COMMENT '排序号'") Integer sortNumber;
-	private @Column(name="dic_parent",cause="父级",	columnDefinition = "bigint(20) COMMENT '父级'") Long parentId;
 	private @Column(name="dic_level",cause="级别",	columnDefinition = "int(11) COMMENT '级别'") Integer levels;
+	private @Column(name="dic_sort",cause="排序号",	columnDefinition = "int(11) COMMENT '排序号'") Integer sortNumber;
+	private @Column(name="dic_value",cause="值",	columnDefinition = "varchar(255) COMMENT '值'") String dicValue;
 	private @Column(name="dic_type",cause="类型:1组，2字典，3字典项",	columnDefinition = "varchar(255) COMMENT '类型:1组，2字典，3字典项'") String dicType;
+	private @Column(name="dic_cause",cause="备注",	columnDefinition = "varchar(255) COMMENT '备注'") String cause;
 
-	private @Transient(cause="字典子集") List<GemDictionary> childs;
-	
+	private @Transient(cause="字典子集") List<GemDictionary> children;
+
 }

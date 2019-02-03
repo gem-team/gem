@@ -38,8 +38,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.gemframe.business.dao.GemRoleMapper;
-import cn.gemframe.business.service.GemRolePermissionsAttrService;
-import cn.gemframe.business.service.GemRolePermissionsParameterService;
 import cn.gemframe.business.service.GemRolePermissionsService;
 import cn.gemframe.business.service.GemRoleService;
 import cn.gemframe.business.service.GemUserRoleService;
@@ -63,31 +61,25 @@ public class GemRoleServiceImpl implements GemRoleService {
 	private GemRolePermissionsService rolePermissionsService;
 	@Autowired
 	private GemUserRoleService userRoleService;
-	@Autowired
-	private GemRolePermissionsAttrService rolePermissionsAttrService;
-	@Autowired
-	private GemRolePermissionsParameterService rolePermissionsParameterService;
+
 	/**
 	 * @Description: 查询用户拥有的角色
 	 * @param id 用户主键
-	 * @param pageNum 当前页
-	 * @param pageSize 每页显示的数据
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@Override
-	public List<GemRole> findRoleByUser(Long id, Integer pageNum, Integer pageSize) {
-		PageHelper.startPage(pageNum, pageSize);
+	public List<GemRole> findRoleByUser(Long id) {
 		Map<String, Object> hashMap = new HashMap<String,Object>();
 		hashMap.put("id", id);
 		List<GemRole> list=roleMapper.findRoleByUser(hashMap);
 		return list;
 	}
-	
+
 	/**
 	 * @Description: 获取角色主键集合
 	 * @param id 用户主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月23日
 	 */
 	@Override
@@ -100,7 +92,7 @@ public class GemRoleServiceImpl implements GemRoleService {
 	/**
 	 * @Description:查询角色详情
 	 * @param id 和角色主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@Override
@@ -111,7 +103,7 @@ public class GemRoleServiceImpl implements GemRoleService {
 	/**
 	 * @Description: 修改角色
 	 * @param roleVo 角色接收参数的实体
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@Override
@@ -124,7 +116,7 @@ public class GemRoleServiceImpl implements GemRoleService {
 	/**
 	 * @Description: 根据主键删除角色
 	 * @param id 角色主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@Override
@@ -137,7 +129,7 @@ public class GemRoleServiceImpl implements GemRoleService {
 	/**
 	 * @Description: 删除用户的角色
 	 * @param id 用户主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@Override
@@ -149,7 +141,7 @@ public class GemRoleServiceImpl implements GemRoleService {
 	 * @Description: 添加角色和权限的关联关系
 	 * @param roleId 角色主键集合
 	 * @param permiss 权限主键集合
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@Override
@@ -198,7 +190,7 @@ public class GemRoleServiceImpl implements GemRoleService {
 	/**
 	 * @Description: 添加角色
 	 * @param roleVo 角色接收参数的实体
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@Override
@@ -208,45 +200,6 @@ public class GemRoleServiceImpl implements GemRoleService {
 		GemRole role = GemFrameJsonUtils.classToClass(roleVo, GemRole.class);
 		role.setId(GemFrameIdUtlis.Id());
 		return roleMapper.insert(role);
-	}
-
-	/**
-	 * @Description:查询角色列表
-	 * @param name  角色名称
-	 * @author: Ryan  
-	 * @date 2018年11月5日
-	 */
-	@Override
-	public List<GemRole> findRoleListByName(String name) {
-		Example example = new Example(GemRole.class);
-		example.createCriteria().andLike("name", name);
-		return roleMapper.selectByExample(example);
-	}
-
-	/**
-	 * @Description:添加角色和属性的关联关系
-	 * @param roleId 角色主键集合
-	 * @param attrs 属性主键集合
-	 * @param permiss 权限主键
-	 * @author: Ryan  
-	 * @date 2018年11月13日
-	 */
-	@Override
-	public Integer saveRoleAndAttrs(Long[] roleId, Long permiss, Long[] attrs) {
-		return rolePermissionsAttrService.saveRoleAndAttrs(roleId,permiss,attrs);
-	}
-
-	/**
-	 * @Description:添加角色和参数的关联关系
-	 * @param roleId 角色主键集合
-	 * @param params 参数主键集合
-	 * @param permiss 权限主键
-	 * @author: Ryan  
-	 * @date 2018年11月13日
-	 */
-	@Override
-	public Integer saveRoleAndParams(Long[] roleId, Long permiss, String[] params) {
-		return rolePermissionsParameterService.saveRoleAndParams(roleId,permiss,params); 
 	}
 
 }

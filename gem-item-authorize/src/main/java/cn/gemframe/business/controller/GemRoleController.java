@@ -53,7 +53,7 @@ public class GemRoleController {
 	/**
 	 * @Description: 添加角色
 	 * @param roleVo 角色接收参数的实体
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@PostMapping("role/saveRole")
@@ -61,11 +61,11 @@ public class GemRoleController {
 		Integer list=roleService.saveRole(roleVo);
 		return ResponseEntity.ok(ResultData.SUCCESS(list));
 	}
-	
+
 	/**
 	 * @Description: 根据主键删除角色
 	 * @param id 角色主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@PostMapping("role/deleteRoleById")
@@ -73,11 +73,11 @@ public class GemRoleController {
 		Integer list=roleService.deleteRoleById(id);
 		return ResponseEntity.ok(ResultData.SUCCESS(list));
 	}
-	
+
 	/**
 	 * @Description: 修改角色
 	 * @param roleVo 角色接收参数的实体
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@PostMapping("role/updateRole")
@@ -85,12 +85,12 @@ public class GemRoleController {
 		Integer list=roleService.updateRole(roleVo);
 		return ResponseEntity.ok(ResultData.SUCCESS(list));
 	}
-	
-	
+
+
 	/**
 	 * @Description:查询角色详情
 	 * @param id 和角色主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@PostMapping("role/findRoleById")
@@ -98,23 +98,23 @@ public class GemRoleController {
 		GemRole list=roleService.findRoleById(id);
 		return ResponseEntity.ok(ResultData.SUCCESS(list));
 	}
-	
+
 	/**
-	 * @Description:查询角色列表
-	 * @param name  角色名称
-	 * @author: Ryan  
+	 * @Description:查询用户对应的角色列表
+	 * @param userId  用户id
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	@PostMapping("role/findRoleListByName")
-	public ResponseEntity<ResultData> findRoleListByName(String name) {
-		List<GemRole> list=roleService.findRoleListByName(name);
+	@PostMapping("role/findRoleListByUserId")
+	public ResponseEntity<ResultData> findRoleListByUserId(Long userId) {
+		List<GemRole> list=roleService.findRoleByUser(userId);
 		return ResponseEntity.ok(ResultData.SUCCESS(list));
 	}
-	
+
 	/**
 	 * @Description: 删除用户的角色
 	 * @param id 用户主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@PostMapping("role/deleteRoleByUserId")
@@ -122,12 +122,12 @@ public class GemRoleController {
 		Integer list=roleService.deleteRoleByUserId(id);
 		return ResponseEntity.ok(ResultData.SUCCESS(list));
 	}
-	
+
 	/**
 	 * @Description: 添加角色和权限的关联关系
 	 * @param roleId 角色主键集合
 	 * @param permiss 权限主键集合
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@PostMapping("role/saveRoleAndPermiss")
@@ -135,39 +135,12 @@ public class GemRoleController {
 		Integer flag=roleService.saveRoleAndPermiss(roleId,permiss);
 		return ResponseEntity.ok(ResultData.SUCCESS(flag));
 	}
-	
-	/**
-	 * @Description:添加角色和属性的关联关系
-	 * @param roleId 角色主键集合
-	 * @param attrs 属性主键集合
-	 * @param permiss 权限主键
-	 * @author: Ryan  
-	 * @date 2018年11月13日
-	 */
-	@PostMapping("role/saveRoleAndAttrs")
-	public ResponseEntity<ResultData> saveRoleAndAttrs(Long[] roleId,Long permiss,Long[] attrs) {
-		Integer flag=roleService.saveRoleAndAttrs(roleId,permiss,attrs);
-		return ResponseEntity.ok(ResultData.SUCCESS(flag));
-	}
-	
-	/**
-	 * @Description:添加角色和参数的关联关系
-	 * @param roleId 角色主键集合
-	 * @param params 参数集合
-	 * @param permiss 权限主键
-	 * @author: Ryan  
-	 * @date 2018年11月13日
-	 */
-	@PostMapping("role/saveRoleAndParams")
-	public ResponseEntity<ResultData> saveRoleAndParams(Long[] roleId,Long permiss,String[] params) {
-		Integer flag=roleService.saveRoleAndParams(roleId,permiss,params);
-		return ResponseEntity.ok(ResultData.SUCCESS(flag));
-	}
-	
+
+
 	/**
 	 * @Description:添加角色和用户的关联关系
 	 * @param userRole 角色和用户关联接收参数的实体对象
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@PostMapping("role/saveUserAndRole")

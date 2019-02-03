@@ -22,8 +22,9 @@
  */
 package cn.gemframe.business.service;
 
-import cn.gemframe.business.domain.GemBrowseLogs;
 import org.springframework.data.domain.Page;
+
+import cn.gemframe.business.domain.GemBrowseLogs;
 
 /**
  * @Title:

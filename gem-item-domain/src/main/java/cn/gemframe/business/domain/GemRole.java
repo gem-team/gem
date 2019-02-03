@@ -28,6 +28,7 @@ import lombok.EqualsAndHashCode;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * @Title:业务对象
@@ -41,12 +42,14 @@ import javax.persistence.Table;
 @Table(name="gem_tab_role")
 @EqualsAndHashCode(callSuper = true)
 public class GemRole extends BaseBean {
-	
+
 	private static final long serialVersionUID = 1L;
-	
-	private @Column(name="role_name",cause="角色名字",	columnDefinition = "varchar(255) COMMENT '角色名字'") String name;
-	private @Column(name="role_code",cause="角色编码",	columnDefinition = "varchar(255) COMMENT '角色编码'") String code;
-	private @Column(name="role_sort",cause="排序号",		columnDefinition = "int(11) COMMENT '排序号'") Integer sortNumber;
-	private @Column(name="role_group",cause="所属角色组id",columnDefinition = "bigint(20) COMMENT '所属角色组id'") Long group;
-	private @Column(name="role_cause",cause="角色描述",	columnDefinition = "varchar(255) COMMENT '角色描述'") String cause;
+
+	private @Column(name="role_name",   cause="角色名字",	columnDefinition = "varchar(255) COMMENT '角色名字'") 	String name;
+	private @Column(name="role_code",   cause="角色编码",	columnDefinition = "varchar(255) COMMENT '角色编码'") 	String code;
+	private @Column(name="role_sort",   cause="排序号",		columnDefinition = "int(11) 	  COMMENT '排序号'") 	Integer sortNumber;
+	private @Column(name="role_groupId",cause="所属角色组",	columnDefinition = "bigint(20)   COMMENT '所属角色组'") Long groupId;
+	private @Column(name="role_cause",  cause="角色描述",	columnDefinition = "varchar(255) COMMENT '角色描述'") 	String cause;
+
+	private @Transient(cause="是否选中") boolean selected;
 }
