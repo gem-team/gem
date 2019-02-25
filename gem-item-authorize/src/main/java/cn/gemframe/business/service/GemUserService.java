@@ -39,7 +39,7 @@ public interface GemUserService {
 	/**
 	 * @Description: 添加用户
 	 * @param userVo 用户参数实体
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	Integer saveUser(GemUserVo userVo);
@@ -49,15 +49,15 @@ public interface GemUserService {
 	/**
 	 * @Description:删除用户
 	 * @param id 用户主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
-	Integer deleteUserByid(Long id);
+	Integer deleteUserById(Long id);
 
 	/**
 	 * @Description: 修改用户
 	 * @param userVo 用户参数实体
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	Integer updateUser(GemUserVo userVo);
@@ -67,7 +67,7 @@ public interface GemUserService {
 	 * @param roleId 角色主键
 	 * @param pageNum 当前页
 	 * @param pageSize 每页显示的数据
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	List<GemUser> findUserListByRoleId(Long roleId, Integer pageNum, Integer pageSize);
@@ -75,7 +75,7 @@ public interface GemUserService {
 	/**
 	 * @Description:用户详情
 	 * @param id 用户主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	GemUser findUserById(Long id);

@@ -46,23 +46,23 @@ public class GemDictionaryController {
 
 	@Autowired
 	private GemDictionaryService dictionaryService;
-	
+
 	/**
 	 * @Description:添加数据字典
 	 * @param dictionaryVo 数据字典对象
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@PostMapping("dic/saveDiction")
 	public ResponseEntity<ResultData> saveDiction(GemDictionaryVo dictionaryVo) {
-		Integer flag=dictionaryService.saveDiction(dictionaryVo);
-		return ResponseEntity.ok(ResultData.SUCCESS(flag));
+		Long dicId=dictionaryService.saveDiction(dictionaryVo);
+		return ResponseEntity.ok(ResultData.SUCCESS(dicId));
 	}
-	
+
 	/**
 	 * @Description:根据主键删除字典
 	 * @param ids 主键集合
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@PostMapping("dic/deleteDictionById")
@@ -70,11 +70,11 @@ public class GemDictionaryController {
 		Integer flag=dictionaryService.deleteDictionById(ids);
 		return ResponseEntity.ok(ResultData.SUCCESS(flag));
 	}
-	
+
 	/**
 	 * @Description:修改数据字典
 	 * @param dictionaryVo 数据字典对象
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@PostMapping("dic/updateDiction")
@@ -82,11 +82,11 @@ public class GemDictionaryController {
 		Integer flag=dictionaryService.updateDiction(dictionaryVo);
 		return ResponseEntity.ok(ResultData.SUCCESS(flag));
 	}
-	
+
 	/**
 	 * @Description: 根据主键查询字典详情
 	 * @param id 主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@PostMapping("dic/findDictionById")
@@ -94,24 +94,24 @@ public class GemDictionaryController {
 		GemDictionary flag=dictionaryService.findDictionById(id);
 		return ResponseEntity.ok(ResultData.SUCCESS(flag));
 	}
-	
+
 	/**
 	 * @Description: 根据菜单主键查询子集
 	 * @param id 主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	@PostMapping("dic/findDictionChildsById")
-	public ResponseEntity<ResultData> findDictionChildsById(Long id) {
-		List<GemDictionary> flag=dictionaryService.findDictionChildsById(id);
+	@PostMapping("dic/findDictionChildrenById")
+	public ResponseEntity<ResultData> findDictionChildrenById(Long id) {
+		List<GemDictionary> flag=dictionaryService.findDictionChildrenById(id);
 		return ResponseEntity.ok(ResultData.SUCCESS(flag));
 	}
-	
+
 	/**
 	 * @Description:查询字典列表
 	 * @param name 名称
 	 * @param code 编码
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月13日
 	 */
 	@PostMapping("dic/findDictionMenu")

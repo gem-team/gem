@@ -45,14 +45,14 @@ import com.github.pagehelper.PageInfo;
  */
 @RestController
 public class GemUserController {
-	
+
 	@Autowired
 	private GemUserService userService;
-	
+
 	/**
 	 * @Description: 添加用户
 	 * @param userVo 用户参数实体
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@PostMapping("user/saveUser")
@@ -60,23 +60,23 @@ public class GemUserController {
 		Integer flag=userService.saveUser(userVo);
 		return ResponseEntity.ok(ResultData.SUCCESS(flag));
 	}
-	
+
 	/**
 	 * @Description:删除用户
 	 * @param id 用户主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
-	@PostMapping("user/deleteUserByid")
-	public ResponseEntity<ResultData> deleteUserByid(Long id){
-		Integer flag=userService.deleteUserByid(id);
+	@PostMapping("user/deleteUserById")
+	public ResponseEntity<ResultData> deleteUserById(Long id){
+		Integer flag=userService.deleteUserById(id);
 		return ResponseEntity.ok(ResultData.SUCCESS(flag));
 	}
-	
+
 	/**
 	 * @Description: 修改用户
 	 * @param userVo 用户参数实体
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@PostMapping("user/updateUser")
@@ -84,11 +84,11 @@ public class GemUserController {
 		Integer flag=userService.updateUser(userVo);
 		return ResponseEntity.ok(ResultData.SUCCESS(flag));
 	}
-	
+
 	/**
 	 * @Description:用户详情
 	 * @param id 用户主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@PostMapping("user/findUserById")
@@ -96,13 +96,13 @@ public class GemUserController {
 		GemUser flag=userService.findUserById(id);
 		return ResponseEntity.ok(ResultData.SUCCESS(flag));
 	}
-	
+
 	/**
 	 * @Description:条件查询用户
 	 * @param userVo 用户参数实体
 	 * @param pageNum 当前页
 	 * @param pageSize 每页显示的数据
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@PostMapping("user/findUserList")
@@ -112,13 +112,13 @@ public class GemUserController {
 		PageInfo<GemUser> pageInfo = new PageInfo<>(flag);
 		return ResponseEntity.ok(ResultData.SUCCESS(pageInfo));
 	}
-	
+
 	/**
 	 * @Description:根据角色查询用户
 	 * @param roleId 角色主键
 	 * @param pageNum 当前页
 	 * @param pageSize 每页显示的数据
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
 	@PostMapping("user/findUserListByRoleId")

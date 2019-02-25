@@ -46,9 +46,9 @@ public class GemRoleGroup extends BaseBean {
 
 	private static final long serialVersionUID = 1L;
 
+	private @Column(name="group_parentId",cause="角色组父级", columnDefinition = "bigint(20) COMMENT '角色组父级'") 	Long parentId;
 	private @Column(name="group_name",	cause="角色组名字",	columnDefinition = "varchar(255) COMMENT '角色组名字'") String name;
 	private @Column(name="group_sort",	cause="排序号",		columnDefinition = "int(11) COMMENT '排序号'") 			Integer sortNumber;
-	private @Column(name="group_parentId",cause="角色组父级", columnDefinition = "bigint(20) COMMENT '角色组父级'") 	Long parentId;
 
 	private @Transient(cause="角色组子集") List<GemRoleGroup> children;
 	private @Transient(cause="角色列表") List<GemRole> roles;

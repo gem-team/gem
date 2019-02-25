@@ -62,12 +62,14 @@ public class GemDictionaryServiceImpl implements GemDictionaryService {
 	 * @date 2018年11月5日
 	 */
 	@Override
-	public Integer saveDiction(GemDictionaryVo dictionaryVo) {
+	public Long saveDiction(GemDictionaryVo dictionaryVo) {
 		dictionaryVo.setCreateDate(new Date());
 		dictionaryVo.setUpdateDate(new Date());
         GemDictionary dictionary = GemFrameJsonUtils.classToClass(dictionaryVo, GemDictionary.class);
-		dictionary.setId(GemFrameIdUtlis.Id());
-		return dictionaryMapper.insert(dictionary);
+        Long id = GemFrameIdUtlis.Id();
+		dictionary.setId(id);
+		dictionaryMapper.insert(dictionary);
+		return id;
 	}
 
 	/**
@@ -117,7 +119,7 @@ public class GemDictionaryServiceImpl implements GemDictionaryService {
 	 * @date 2018年11月5日
 	 */
 	@Override
-	public List<GemDictionary> findDictionChildsById(Long id) {
+	public List<GemDictionary> findDictionChildrenById(Long id) {
 		if(id==null) {
 			throw new GemFrameException(GemFrameErrorStatus.PARAMETER_ERROR);
 		}
@@ -150,7 +152,7 @@ public class GemDictionaryServiceImpl implements GemDictionaryService {
 		}
 		example.setOrderByClause("dic_sort asc");
 		List<GemDictionary> selectByExample = dictionaryMapper.selectByExample(example);
-		return getDicChildsList(selectByExample,name,code);
+		return getDicChildrenList(selectByExample,name,code);
 	}
 
 	/**
@@ -159,7 +161,7 @@ public class GemDictionaryServiceImpl implements GemDictionaryService {
 	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	public List<GemDictionary> getDicChildsList(List<GemDictionary> list,String name, String code) {
+	public List<GemDictionary> getDicChildrenList(List<GemDictionary> list,String name, String code) {
 		if(list!=null && list.size()>0) {
 			for (GemDictionary dictionary : list) {
 				Example example = new Example(GemDictionary.class);
@@ -178,7 +180,7 @@ public class GemDictionaryServiceImpl implements GemDictionaryService {
 				example.setOrderByClause("dic_sort asc");
 				List<GemDictionary> selectByExample = dictionaryMapper.selectByExample(example);
 				dictionary.setChildren(selectByExample);
-				getDicChildsList(selectByExample,name,code);
+				getDicChildrenList(selectByExample,name,code);
 			}
 		}
 		return list;

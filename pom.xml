@@ -28,6 +28,7 @@
 		<springfox-swagger-version>2.6.1</springfox-swagger-version>
 		<!-- admin -->
 		<admin-version>1.5.7</admin-version>
+
 	</properties>
 	<repositories>
 		<repository>
@@ -50,6 +51,12 @@
 					<source>${java-jdk-version}</source>
 					<target>${java-jdk-version}</target>
 				</configuration>
+			</plugin>
+			<!--构建JAVADOC-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.0.0</version>
 			</plugin>
 		</plugins>
 	</build>

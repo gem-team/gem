@@ -55,8 +55,8 @@ public class GemPermissionsController {
 	 */
 	@PostMapping("permission/savePermission")
 	public ResponseEntity<ResultData> savePermission(GemPermissionsVo permissionsVo) {
-		Integer returnCount = permissionsService.savePermission(permissionsVo);
-		return ResponseEntity.ok(ResultData.SUCCESS(returnCount));
+		Long permissionId = permissionsService.savePermission(permissionsVo);
+		return ResponseEntity.ok(ResultData.SUCCESS(permissionId));
 	}
 
 	/**

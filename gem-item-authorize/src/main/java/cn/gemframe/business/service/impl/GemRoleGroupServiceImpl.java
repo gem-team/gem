@@ -63,12 +63,14 @@ public class GemRoleGroupServiceImpl implements GemRoleGroupService {
 	 * @date 2018年11月10日
 	 */
 	@Override
-	public Integer saveRoleGroup(GemRoleGroupVo roleGroupVo) {
+	public Long saveRoleGroup(GemRoleGroupVo roleGroupVo) {
 		roleGroupVo.setCreateDate(new Date());
 		roleGroupVo.setUpdateDate(new Date());
 		GemRoleGroup roleGroup = GemFrameJsonUtils.classToClass(roleGroupVo, GemRoleGroup.class);
-		roleGroup.setId(GemFrameIdUtlis.Id());
-		return roleGroupMapper.insert(roleGroup);
+		Long id = GemFrameIdUtlis.Id();
+		roleGroup.setId(id);
+		roleGroupMapper.insert(roleGroup);
+		return id;
 	}
 
 	/**
@@ -118,7 +120,7 @@ public class GemRoleGroupServiceImpl implements GemRoleGroupService {
 		example.createCriteria().andEqualTo("parentId",-1);
 		example.setOrderByClause("group_sort asc");
 		List<GemRoleGroup> listGroup = roleGroupMapper.selectByExample(example);
-		return findGroupChilds(listGroup);
+		return findGroupChildren(listGroup);
 	}
 
 	/**
@@ -127,7 +129,7 @@ public class GemRoleGroupServiceImpl implements GemRoleGroupService {
 	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
-	private List<GemRoleGroup> findGroupChilds(List<GemRoleGroup> listGroup){
+	private List<GemRoleGroup> findGroupChildren(List<GemRoleGroup> listGroup){
 		if(listGroup!=null && listGroup.size()>0) {
 			for (GemRoleGroup roleGroup : listGroup) {
 				Example example = new Example(GemRole.class);
@@ -142,7 +144,7 @@ public class GemRoleGroupServiceImpl implements GemRoleGroupService {
 				example2.setOrderByClause("group_sort asc");
 				List<GemRoleGroup> selectByExample2 = roleGroupMapper.selectByExample(example2);
 				roleGroup.setChildren(selectByExample2);
-				findGroupChilds(selectByExample2);
+				findGroupChildren(selectByExample2);
 			}
 		}
 		return listGroup;

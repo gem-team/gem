@@ -51,7 +51,7 @@ public class GemDictionary extends BaseBean {
 	private @Column(name="dic_code",cause="编码",	columnDefinition = "varchar(255) COMMENT '编码'") String code;
 	private @Column(name="dic_level",cause="级别",	columnDefinition = "int(11) COMMENT '级别'") Integer levels;
 	private @Column(name="dic_sort",cause="排序号",	columnDefinition = "int(11) COMMENT '排序号'") Integer sortNumber;
-	private @Column(name="dic_value",cause="值",	columnDefinition = "varchar(255) COMMENT '值'") String dicValue;
+	private @Column(name="dic_value",cause="字典项值",	columnDefinition = "varchar(255) COMMENT '字典项值'") String dicValue;
 	private @Column(name="dic_type",cause="类型:1组，2字典，3字典项",	columnDefinition = "varchar(255) COMMENT '类型:1组，2字典，3字典项'") String dicType;
 	private @Column(name="dic_cause",cause="备注",	columnDefinition = "varchar(255) COMMENT '备注'") String cause;
 

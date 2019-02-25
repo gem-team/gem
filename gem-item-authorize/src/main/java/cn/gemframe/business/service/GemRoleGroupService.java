@@ -42,7 +42,7 @@ public interface GemRoleGroupService {
 	 * @author: Ryan
 	 * @date 2018年11月10日
 	 */
-	Integer saveRoleGroup(GemRoleGroupVo roleGroupVo);
+	Long saveRoleGroup(GemRoleGroupVo roleGroupVo);
 
 	/**
 	 * @Description:删除角色组

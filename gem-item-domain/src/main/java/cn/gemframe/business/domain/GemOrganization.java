@@ -49,11 +49,11 @@ public class GemOrganization extends BaseBean {
 
 	private @Column(name="organ_parentId",cause="父级",			columnDefinition = "bigint(20) COMMENT '父级'") 	  Long parentId;
 	private @Column(name="organ_name",cause="部门名称",			columnDefinition = "varchar(255) COMMENT '部门名称'") String organName;
-	private @Column(name="organ_short_name",cause="部门简称",			columnDefinition = "varchar(255) COMMENT '部门简称'") String organShortName;
+	private @Column(name="organ_short_name",cause="部门简称",	columnDefinition = "varchar(255) COMMENT '部门简称'") String organShortName;
 	private @Column(name="organ_sort",cause="排序号",			columnDefinition = "int(11) COMMENT '排序号'") 		  Integer sortNumber;
 	private @Column(name="organ_cause",cause="备注",			columnDefinition = "varchar(255) COMMENT '备注'") 	  String cause;
 
-	private @Transient(cause="组织机构子集") List<GemOrganization> childs;
+	private @Transient(cause="组织机构子集") List<GemOrganization> children;
 
 	public GemOrganization() {
 	}

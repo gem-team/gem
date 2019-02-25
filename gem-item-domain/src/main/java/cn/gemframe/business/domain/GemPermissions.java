@@ -52,6 +52,7 @@ public class GemPermissions extends BaseBean {
 	private @Column(name="per_icon",	cause="图标",		columnDefinition = "varchar(255) COMMENT '图标'")		String icon;
 	private @Column(name="per_code",	cause="权限编码",	columnDefinition = "varchar(255) COMMENT '权限编码'")	String code;
 	private @Column(name="per_level",	cause="权限的级别",	columnDefinition = "int(11) COMMENT '权限的级别'") 		Integer levels;
+	private @Column(name="per_sort",	cause="排序号",		columnDefinition = "int(11) COMMENT '排序号'") 			Integer sortNumber;
 	private @Column(name="per_menus_type",cause="是否是菜单0为菜单1按钮",columnDefinition = "int(11) COMMENT '是否是菜单0为菜单1按钮'") Integer menusType;
 	private @Column(name="per_cause",	cause="权限描述",	columnDefinition = "varchar(255) COMMENT '权限描述'") 	String cause;
 

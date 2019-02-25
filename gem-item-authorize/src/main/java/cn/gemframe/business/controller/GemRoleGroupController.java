@@ -55,8 +55,8 @@ public class GemRoleGroupController {
 	 */
 	@PostMapping("roleGroup/saveRoleGroup")
 	public ResponseEntity<ResultData> saveRoleGroup(GemRoleGroupVo roleGroupVo){
-		Integer flag=roleGroupService.saveRoleGroup(roleGroupVo);
-		return ResponseEntity.ok(ResultData.SUCCESS(flag));
+		Long roleGroupId=roleGroupService.saveRoleGroup(roleGroupVo);
+		return ResponseEntity.ok(ResultData.SUCCESS(roleGroupId));
 	}
 
 	/**

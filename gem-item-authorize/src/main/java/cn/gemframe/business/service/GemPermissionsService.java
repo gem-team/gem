@@ -41,7 +41,7 @@ public interface GemPermissionsService {
 	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	Integer savePermission(GemPermissionsVo permissionsVo);
+	Long savePermission(GemPermissionsVo permissionsVo);
 	/**
 	 * @Description:删除权限
 	 * @param id 权限主键集合

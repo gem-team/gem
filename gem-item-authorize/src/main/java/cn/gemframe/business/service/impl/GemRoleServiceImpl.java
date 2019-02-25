@@ -140,18 +140,18 @@ public class GemRoleServiceImpl implements GemRoleService {
 	/**
 	 * @Description: 添加角色和权限的关联关系
 	 * @param roleId 角色主键集合
-	 * @param permiss 权限主键集合
+	 * @param permission 权限主键集合
 	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	@Override
-	public Integer saveRoleAndPermiss(Long[] roleId,Long[] permiss) {
-		if(roleId!=null && roleId.length>0 && permiss!=null && permiss.length>0) {
+	public Integer saveRoleAndPermission(Long[] roleId,Long[] permission) {
+		if(roleId!=null && roleId.length>0 && permission!=null && permission.length>0) {
 			for (Long rid : roleId) {
 				rolePermissionsService.deleteByRoleId(rid);
 			}
 			for (Long rid : roleId) {
-				for (Long pid : permiss) {
+				for (Long pid : permission) {
 					GemRolePermissions rolePermissions = new GemRolePermissions();
 					rolePermissions.setId(GemFrameIdUtlis.Id());
 					rolePermissions.setRoleId(rid);
@@ -194,12 +194,14 @@ public class GemRoleServiceImpl implements GemRoleService {
 	 * @date 2018年11月5日
 	 */
 	@Override
-	public Integer saveRole(GemRoleVo roleVo) {
+	public Long saveRole(GemRoleVo roleVo) {
 		roleVo.setCreateDate(new Date());
 		roleVo.setUpdateDate(new Date());
 		GemRole role = GemFrameJsonUtils.classToClass(roleVo, GemRole.class);
-		role.setId(GemFrameIdUtlis.Id());
-		return roleMapper.insert(role);
+		Long id = GemFrameIdUtlis.Id();
+		role.setId(id);
+		roleMapper.insert(role);
+		return id;
 	}
 
 }

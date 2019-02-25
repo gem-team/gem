@@ -39,15 +39,15 @@ public interface GemDictionaryService {
 	/**
 	 * @Description:添加数据字典
 	 * @param dictionaryVo 数据字典对象
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	Integer saveDiction(GemDictionaryVo dictionaryVo);
+	Long saveDiction(GemDictionaryVo dictionaryVo);
 
 	/**
 	 * @Description:根据主键删除字典
 	 * @param ids 主键集合
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	Integer deleteDictionById(Long[] ids);
@@ -55,7 +55,7 @@ public interface GemDictionaryService {
 	/**
 	 * @Description:修改数据字典
 	 * @param dictionaryVo 数据字典对象
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	Integer updateDiction(GemDictionaryVo dictionaryVo);
@@ -63,7 +63,7 @@ public interface GemDictionaryService {
 	/**
 	 * @Description: 根据主键查询字典详情
 	 * @param id 主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
 	GemDictionary findDictionById(Long id);
@@ -71,16 +71,16 @@ public interface GemDictionaryService {
 	/**
 	 * @Description: 根据主键查询子集
 	 * @param id 主键
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	List<GemDictionary> findDictionChildsById(Long id);
+	List<GemDictionary> findDictionChildrenById(Long id);
 
 	/**
 	 * @Description:查询字典列表
 	 * @param name 名称
 	 * @param code 编码
-	 * @author: Ryan  
+	 * @author: Ryan
 	 * @date 2018年11月13日
 	 */
 	List<GemDictionary> findDictionMenu(String name, String code);

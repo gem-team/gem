@@ -68,12 +68,14 @@ public class GemPermissionsServiceImpl implements GemPermissionsService {
 	 * @date 2018年11月5日
 	 */
 	@Override
-	public Integer savePermission(GemPermissionsVo permissionsVo) {
+	public Long savePermission(GemPermissionsVo permissionsVo) {
 		permissionsVo.setCreateDate(new Date());
 		permissionsVo.setUpdateDate(new Date());
 		GemPermissions permissions = GemFrameJsonUtils.classToClass(permissionsVo, GemPermissions.class);
-		permissions.setId(GemFrameIdUtlis.Id());
-		return permissionsMapper.insert(permissions);
+		Long id = GemFrameIdUtlis.Id();
+		permissions.setId(id);
+		permissionsMapper.insert(permissions);
+		return id;
 	}
 
 	/**
@@ -187,6 +189,7 @@ public class GemPermissionsServiceImpl implements GemPermissionsService {
 			Example.Criteria createCriteria = example.createCriteria();
 			createCriteria.andEqualTo("menusType",1);
 			createCriteria.andEqualTo("parentId",permissionId);
+			example.setOrderByClause("per_sort asc");
 			permissionButtonListByPermissionId = permissionsMapper.selectByExample(example);
 			//根据菜单和角色获取对应的按钮
 			Map<String, Object> hashMap = new HashMap<String,Object>();
@@ -272,6 +275,7 @@ public class GemPermissionsServiceImpl implements GemPermissionsService {
 		Example.Criteria createCriteria = example.createCriteria();
 		createCriteria.andEqualTo("parentId",parentId);
 		createCriteria.andEqualTo("menusType",1);
+		example.setOrderByClause("per_sort asc");
 		List<GemPermissions> selectByExample = permissionsMapper.selectByExample(example);
 		return selectByExample;
 	}
@@ -286,6 +290,7 @@ public class GemPermissionsServiceImpl implements GemPermissionsService {
 		Example example = new Example(GemPermissions.class);
 		Example.Criteria createCriteria = example.createCriteria();
 		createCriteria.andEqualTo("menusType",menusType);
+		example.setOrderByClause("per_sort asc");
 		List<GemPermissions> selectByExample = permissionsMapper.selectByExample(example);
 		return selectByExample;
 	}

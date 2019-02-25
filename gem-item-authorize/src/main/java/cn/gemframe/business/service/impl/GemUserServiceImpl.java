@@ -151,7 +151,7 @@ public class GemUserServiceImpl implements GemUserService {
 	 * @date 2018年11月10日
 	 */
 	@Override
-	public Integer deleteUserByid(Long id) {
+	public Integer deleteUserById(Long id) {
 		return userMapper.deleteByPrimaryKey(id);
 	}
 

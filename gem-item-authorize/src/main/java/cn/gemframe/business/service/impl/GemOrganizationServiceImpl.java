@@ -199,7 +199,7 @@ public class GemOrganizationServiceImpl implements GemOrganizationService {
 					createCriteria.andIn("id", ids);
 				}
 				List<GemOrganization> selectByExample = organizationMapper.selectByExample(example);
-				organization.setChilds(selectByExample);
+				organization.setChildren(selectByExample);
 				getOrganZtree(selectByExample,ids);
 			}
 		}

@@ -58,8 +58,8 @@ public class GemRoleController {
 	 */
 	@PostMapping("role/saveRole")
 	public ResponseEntity<ResultData> saveRole(GemRoleVo roleVo) {
-		Integer list=roleService.saveRole(roleVo);
-		return ResponseEntity.ok(ResultData.SUCCESS(list));
+		Long roleId=roleService.saveRole(roleVo);
+		return ResponseEntity.ok(ResultData.SUCCESS(roleId));
 	}
 
 	/**
@@ -126,13 +126,13 @@ public class GemRoleController {
 	/**
 	 * @Description: 添加角色和权限的关联关系
 	 * @param roleId 角色主键集合
-	 * @param permiss 权限主键集合
+	 * @param permission 权限主键集合
 	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	@PostMapping("role/saveRoleAndPermiss")
-	public ResponseEntity<ResultData> saveRoleAndPermiss(Long[] roleId,Long[] permiss) {
-		Integer flag=roleService.saveRoleAndPermiss(roleId,permiss);
+	@PostMapping("role/saveRoleAndPermission")
+	public ResponseEntity<ResultData> saveRoleAndPermission(Long[] roleId,Long[] permission) {
+		Integer flag=roleService.saveRoleAndPermission(roleId,permission);
 		return ResponseEntity.ok(ResultData.SUCCESS(flag));
 	}
 

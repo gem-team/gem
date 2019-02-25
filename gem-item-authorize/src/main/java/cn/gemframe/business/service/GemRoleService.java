@@ -41,7 +41,7 @@ public interface GemRoleService {
 	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	Integer saveRole(GemRoleVo roleVo);
+	Long saveRole(GemRoleVo roleVo);
 	/**
 	 * @Description: 根据主键删除角色
 	 * @param id 角色主键
@@ -73,11 +73,11 @@ public interface GemRoleService {
 	/**
 	 * @Description: 添加角色和权限的关联关系
 	 * @param roleId 角色主键集合
-	 * @param permiss 权限主键集合
+	 * @param permission 权限主键集合
 	 * @author: Ryan
 	 * @date 2018年11月5日
 	 */
-	Integer saveRoleAndPermiss(Long[] roleId,Long[] permiss);
+	Integer saveRoleAndPermission(Long[] roleId,Long[] permission);
 	/**
 	 * @Description:添加角色和用户的关联关系
 	 * @param userRole 角色和用户关联接收参数的实体对象
