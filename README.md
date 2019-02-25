@@ -15,7 +15,6 @@ GemFrame
 **项目模块介绍**
 > 业务模块
 - gem-item-sso 单点登录
-- gem-item-user 用户业务
 - gem-item-authorize 授权业务
 - gem-item-common 通用业务
 - gem-item-model 对象模型po,vo
