@@ -34,12 +34,12 @@
 		<repository>
 			<id>maven-central</id>
 			<name>maven-central</name>
-			<url>http://nexus.webcloud.iego.cn:8081/repository/maven-central/</url>
+			<url>http://maven.gemframe.cn/repository/maven-central/</url>
 		</repository>
 		<repository>
 			<id>maven-public</id>
 			<name>maven-public</name>
-			<url>http://nexus.webcloud.iego.cn:8081/repository/maven-public/</url>
+			<url>http://maven.gemframe.cn/repository/maven-public/</url>
 		</repository>
 	</repositories>
 	<build>
