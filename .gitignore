@@ -1,5 +1,6 @@
 # IDE filter
 *.idea
+*.xml
 *.iml
 .classpath
 .project
